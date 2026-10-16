@@ -55,28 +55,12 @@ function SectionHead({ k, t }: { k: string; t: string }) {
 }
 
 function Portrait() {
-  const [src, setSrc] = useState<string | null>(null);
-  useEffect(() => { setSrc(localStorage.getItem("portrait")); }, []);
-  const onFile = (e: ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0];
-    if (!f) return;
-    const r = new FileReader();
-    r.onload = () => { const v = r.result as string; setSrc(v); try { localStorage.setItem("portrait", v); } catch {} };
-    r.readAsDataURL(f);
-  };
   return (
-    <label className="group relative mx-auto block aspect-[4/5] w-full max-w-sm cursor-pointer overflow-hidden rounded-3xl border border-border bg-secondary shadow-[var(--shadow-soft)]">
-      {src ? (
-        <img src={src} alt="Subhash Thaliyil" className="h-full w-full object-cover" />
-      ) : (
-        <div className="flex h-full flex-col items-center justify-center gap-3 text-muted-foreground">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-background font-display text-3xl font-semibold text-primary">ST</div>
-          <span className="flex items-center gap-2 text-sm"><Camera className="h-4 w-4" /> Upload your photo</span>
-        </div>
-      )}
-      {src && <span className="absolute bottom-3 right-3 rounded-full bg-background/90 px-3 py-1 text-xs text-primary opacity-0 transition group-hover:opacity-100">Change photo</span>}
-      <input type="file" accept="image/*" className="sr-only" onChange={onFile} />
-    </label>
+    <div className="relative mx-auto aspect-square w-full max-w-sm">
+      <div className="h-full w-full overflow-hidden rounded-full border border-border shadow-[var(--shadow-soft)]">
+        <img src={portrait} alt="Subhash Thaliyil" width={900} height={900} className="h-full w-full object-cover" />
+      </div>
+    </div>
   );
 }
 
