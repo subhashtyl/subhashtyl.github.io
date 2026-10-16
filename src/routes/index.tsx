@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type ChangeEvent } from "react";
+import portrait from "@/assets/subhash-portrait.jpg";
 import {
   ClipboardList, Workflow, AppWindow, Network, Database, LayoutTemplate, Users,
-  Mail, Linkedin, MapPin, Camera, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
+  Mail, Linkedin, MapPin, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
