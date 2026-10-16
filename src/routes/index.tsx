@@ -77,7 +77,8 @@ function Index() {
       </header>
 
       <section id="top" className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-        <div className="animate-rise">
+        <div className="animate-rise [animation-delay:150ms] md:order-2"><Portrait /></div>
+        <div className="animate-rise md:order-1">
           <p className="flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4" /> Dubai, UAE</p>
           <h1 className="mt-4 text-5xl font-semibold text-primary md:text-6xl">Subhash Thaliyil</h1>
           <p className="mt-3 text-xl font-medium">Assistant Vice President</p>
@@ -88,7 +89,6 @@ function Index() {
             <a href="#contact" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm font-medium text-primary transition hover:bg-accent">Contact Me</a>
           </div>
         </div>
-        <div className="animate-rise [animation-delay:150ms]"><Portrait /></div>
       </section>
 
       <section id="about" className="bg-muted py-20">
