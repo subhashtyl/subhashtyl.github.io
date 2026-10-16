@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type ChangeEvent } from "react";
+import portrait from "@/assets/subhash-portrait.jpg";
 import {
   ClipboardList, Workflow, AppWindow, Network, Database, LayoutTemplate, Users,
-  Mail, Linkedin, MapPin, Camera, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
+  Mail, Linkedin, MapPin, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -55,28 +55,12 @@ function SectionHead({ k, t }: { k: string; t: string }) {
 }
 
 function Portrait() {
-  const [src, setSrc] = useState<string | null>(null);
-  useEffect(() => { setSrc(localStorage.getItem("portrait")); }, []);
-  const onFile = (e: ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0];
-    if (!f) return;
-    const r = new FileReader();
-    r.onload = () => { const v = r.result as string; setSrc(v); try { localStorage.setItem("portrait", v); } catch {} };
-    r.readAsDataURL(f);
-  };
   return (
-    <label className="group relative mx-auto block aspect-[4/5] w-full max-w-sm cursor-pointer overflow-hidden rounded-3xl border border-border bg-secondary shadow-[var(--shadow-soft)]">
-      {src ? (
-        <img src={src} alt="Subhash Thaliyil" className="h-full w-full object-cover" />
-      ) : (
-        <div className="flex h-full flex-col items-center justify-center gap-3 text-muted-foreground">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-background font-display text-3xl font-semibold text-primary">ST</div>
-          <span className="flex items-center gap-2 text-sm"><Camera className="h-4 w-4" /> Upload your photo</span>
-        </div>
-      )}
-      {src && <span className="absolute bottom-3 right-3 rounded-full bg-background/90 px-3 py-1 text-xs text-primary opacity-0 transition group-hover:opacity-100">Change photo</span>}
-      <input type="file" accept="image/*" className="sr-only" onChange={onFile} />
-    </label>
+    <div className="relative mx-auto aspect-square w-full max-w-sm">
+      <div className="h-full w-full overflow-hidden rounded-full border border-border shadow-[var(--shadow-soft)]">
+        <img src={portrait} alt="Subhash Thaliyil" width={900} height={900} className="h-full w-full object-cover" />
+      </div>
+    </div>
   );
 }
 
@@ -93,7 +77,8 @@ function Index() {
       </header>
 
       <section id="top" className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-        <div className="animate-rise">
+        <div className="animate-rise [animation-delay:150ms] md:order-2"><Portrait /></div>
+        <div className="animate-rise md:order-1">
           <p className="flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4" /> Dubai, UAE</p>
           <h1 className="mt-4 text-5xl font-semibold text-primary md:text-6xl">Subhash Thaliyil</h1>
           <p className="mt-3 text-xl font-medium">Assistant Vice President</p>
@@ -104,7 +89,6 @@ function Index() {
             <a href="#contact" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm font-medium text-primary transition hover:bg-accent">Contact Me</a>
           </div>
         </div>
-        <div className="animate-rise [animation-delay:150ms]"><Portrait /></div>
       </section>
 
       <section id="about" className="bg-muted py-20">
