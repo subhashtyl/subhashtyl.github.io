@@ -3,15 +3,16 @@ import portrait from "@/assets/subhash-portrait.jpg";
 import {
   ClipboardList, Workflow, AppWindow, Network, Database, LayoutTemplate, Users,
   Mail, Linkedin, MapPin, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
+  Landmark, ScanText, Sparkles, ShieldCheck, MonitorSmartphone,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Subhash Thaliyil — Business Applications & Digital Solutions" },
-      { name: "description", content: "Assistant Vice President in Dubai bridging business requirements and technology to design practical, scalable digital solutions." },
+      { title: "Subhash Thaliyil — Insurance IT & Digital Transformation" },
+      { name: "description", content: "Assistant Vice President in Dubai leading insurance digital platforms, CBUAE Open Finance, UAE e-Invoicing, API integration and AI-enabled automation." },
       { property: "og:title", content: "Subhash Thaliyil — Portfolio" },
-      { property: "og:description", content: "Business Applications • Digital Solutions • System Integration. Dubai, UAE." },
+      { property: "og:description", content: "Insurance IT • Regulatory Technology • API Integration • AI & Intelligent Automation. Dubai, UAE." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -22,28 +23,39 @@ export const Route = createFileRoute("/")({
 const EMAIL = "subhashthaliyil@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/subhash-thaliyil-a41a22b4";
 
+const roles = [
+  "Manage digital insurance portals and applications across General and Medical Insurance.",
+  "Lead business requirements, solution design, change requests, integrations, testing and implementation.",
+  "Drive key regulatory initiatives, particularly CBUAE Open Finance and UAE e-Invoicing.",
+  "Manage API integrations, payment gateway solutions and automation services, including CyberSource-related automation.",
+  "Coordinate with business, IT, infrastructure, security, vendors and external partners to deliver projects and resolve dependencies.",
+  "Provide production support and technical / functional issue resolution for online platforms and integrations.",
+  "Support digital transformation and process automation to improve insurance operations and customer journeys.",
+];
+
 const expertise = [
-  { icon: ClipboardList, t: "Business Requirement Analysis", d: "Capturing needs and translating them into clear functional requirements." },
-  { icon: Workflow, t: "Solution & Process Design", d: "Designing streamlined processes and practical solution approaches." },
-  { icon: AppWindow, t: "Digital Application Development", d: "Guiding enhancements and new digital applications end to end." },
-  { icon: Network, t: "System Integration", d: "Defining integrations between platforms, partners and channels." },
-  { icon: Database, t: "Application & Database Analysis", d: "Analysing application behaviour and data to validate outcomes." },
-  { icon: LayoutTemplate, t: "UI/UX & Functional Prototyping", d: "Visualising journeys and screens before development begins." },
-  { icon: Users, t: "Stakeholder & Vendor Coordination", d: "Aligning business, technical teams and vendors on scope and delivery." },
+  { icon: Briefcase, t: "IT Delivery & Project Coordination", d: "From requirements and scope through vendor follow-up, defect resolution, UAT, release preparation and business acceptance." },
+  { icon: Landmark, t: "Regulatory Technology & Open Finance", d: "CBUAE Open Finance data-sharing APIs, near-real-time quotations, consent management, certification and production readiness." },
+  { icon: MonitorSmartphone, t: "Digital Insurance Platforms", d: "Online portals and journeys for quotation, purchase, renewal, customer and intermediary workflows and self-service." },
+  { icon: Network, t: "API Integration & Interoperability", d: "Internal and partner APIs, payment gateways, data mapping, request/response validation and integration readiness." },
+  { icon: ScanText, t: "AI, OCR & Document Processing", d: "AI-enabled extraction with Azure AI Document Intelligence, OCR and GPT-based approaches to reduce manual data entry." },
+  { icon: Sparkles, t: "AI Solution Evaluation & Adoption", d: "Assessing AI use cases for business value, accuracy, integration feasibility, limitations and cost." },
+  { icon: Workflow, t: "Digital Transformation & Automation", d: "UAE e-Invoicing data capture, document handling, automated notifications and API-enabled data exchange." },
+  { icon: ShieldCheck, t: "Quality, Security & Production Readiness", d: "Testing, UAT, defect tracking, VAPT coordination, remediation follow-up and production support." },
 ];
 
 const skills = [
-  { icon: Briefcase, t: "Business & Functional", items: ["Requirement Gathering", "Business Process Analysis", "Functional Specification", "Change Request Documentation", "Business Rules & Validations", "User Journey Design", "UAT Support"] },
-  { icon: Code2, t: "Technology", items: ["Oracle SQL", "System Integration", "API Integration", "Data Analysis", "Application Troubleshooting", "Backend Validation", "Web Applications"] },
-  { icon: PenTool, t: "Digital Solution Design", items: ["Functional Prototyping", "UI/UX Flow Design", "Form & Dashboard Design", "Process Flowcharts", "Workflow Design"] },
-  { icon: Rocket, t: "Delivery", items: ["Stakeholder Coordination", "Vendor Coordination", "Scope Clarification", "Solution Review", "Implementation Support"] },
+  { icon: Briefcase, t: "Business & Delivery", items: ["IT Delivery & Project Coordination", "Requirements Analysis", "Stakeholder & Vendor Management", "Change Request Management", "Solution Design", "UAT & Release Readiness"] },
+  { icon: Landmark, t: "Insurance & Regulatory", items: ["General & Medical Insurance Platforms", "UAE Insurance Regulatory Change", "CBUAE Open Finance", "Data-Sharing APIs & Consent", "UAE e-Invoicing"] },
+  { icon: Code2, t: "Technology & Integration", items: ["API Integration & Partner Connectivity", "Payment Gateways (CyberSource)", "Oracle SQL & Data Analysis", "Production Support & Troubleshooting", "VAPT Coordination"] },
+  { icon: Sparkles, t: "AI & Automation", items: ["Generative AI & GPT-Based Use Cases", "Azure AI Document Intelligence", "OCR & Intelligent Document Processing", "Workflow Automation", "Prototyping & UI/UX Flows"] },
 ];
 
-const highlights = ["Customer Data Capture", "Customer & Channel Partner Journeys", "Validation & Submission", "Review Workflows", "OTP Validation", "Digital Integration", "System Integration Architecture", "Status & Error Handling"];
+const highlights = ["CBUAE Open Finance APIs", "Near-Real-Time Quotations", "Consent Management", "UAE e-Invoicing Data Capture", "Payment Gateway & CyberSource Automation", "AI Document Processing (OCR / GPT)", "Customer & Intermediary Journeys", "OTP Validation & Status Handling", "System Integration Architecture", "VAPT & Production Readiness"];
 
-const steps = ["Understand the Business", "Simplify the Process", "Prototype the Solution", "Define the Integration", "Validate the Data", "Coordinate Development", "Support Implementation"];
+const steps = ["Understand the Requirement", "Simplify the Process", "Design & Prototype", "Define the Integration", "Test & Secure", "Deliver & Release", "Support & Improve"];
 
-const nav = [["About", "about"], ["Expertise", "expertise"], ["Skills", "skills"], ["Work", "work"], ["Approach", "approach"], ["Contact", "contact"]];
+const nav = [["About", "about"], ["Roles", "roles"], ["Expertise", "expertise"], ["Skills", "skills"], ["Work", "work"], ["Approach", "approach"], ["Contact", "contact"]];
 
 function SectionHead({ k, t }: { k: string; t: string }) {
   return (
@@ -82,8 +94,8 @@ function Index() {
           <p className="flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4" /> Dubai, UAE</p>
           <h1 className="mt-4 text-5xl font-semibold text-primary md:text-6xl">Subhash Thaliyil</h1>
           <p className="mt-3 text-xl font-medium">Assistant Vice President</p>
-          <p className="mt-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">Business Applications • Digital Solutions • System Integration</p>
-          <p className="mt-6 max-w-lg text-lg text-muted-foreground">Bridging business requirements and technology to design practical, scalable digital solutions.</p>
+          <p className="mt-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">Insurance IT • Digital Transformation • Regulatory Technology</p>
+          <p className="mt-6 max-w-lg text-lg text-muted-foreground">Translating business and regulatory requirements into secure, practical technology solutions — across digital insurance platforms, API integration and AI-enabled automation.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90">View My Work <ArrowRight className="h-4 w-4" /></a>
             <a href="#contact" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm font-medium text-primary transition hover:bg-accent">Contact Me</a>
@@ -95,15 +107,24 @@ function Index() {
         <div className="mx-auto max-w-4xl px-6">
           <SectionHead k="About Me" t="Turning requirements into working solutions" />
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>Technology and business applications professional focused on converting business requirements into practical digital solutions.</p>
-            <p>My role involves working across business requirement analysis, solution design, application enhancements, system integrations, process automation, vendor coordination, prototypes, testing and implementation support.</p>
-            <p>I work closely with business stakeholders, technical teams and external vendors to translate operational requirements into clear functional specifications and implementable solutions.</p>
+            <p>Insurance IT and digital transformation professional coordinating end-to-end technology delivery across regulatory initiatives, digital insurance platforms, API integrations and process automation.</p>
+            <p>I work across business teams, IT, compliance, technology vendors and external partners to turn business and regulatory requirements into practical solutions — from requirements definition and solution coordination through development, integration, testing, UAT and production readiness.</p>
+            <p>My focus areas include UAE insurance technology, CBUAE Open Finance, customer and intermediary digital journeys, and the practical application of AI-enabled document processing and intelligent automation — aligning regulatory obligations, operational needs and technology to deliver secure, efficient, customer-centric insurance solutions.</p>
           </div>
         </div>
       </section>
 
-      <section id="expertise" className="mx-auto max-w-6xl px-6 py-20">
-        <SectionHead k="Expertise" t="Areas of focus" />
+      <section id="roles" className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHead k="Roles & Responsibilities" t="What I own today" />
+        <div className="grid gap-4 md:grid-cols-2">
+          {roles.map((x) => (
+            <div key={x} className="card-soft flex items-start gap-4 p-5"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><p className="text-sm text-muted-foreground">{x}</p></div>
+          ))}
+        </div>
+      </section>
+
+      <section id="expertise" className="bg-muted py-20"><div className="mx-auto max-w-6xl px-6">
+        <SectionHead k="Core Areas of Responsibility" t="Areas of expertise" />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {expertise.map(({ icon: I, t, d }) => (
             <div key={t} className="card-soft p-6">
@@ -113,9 +134,9 @@ function Index() {
             </div>
           ))}
         </div>
-      </section>
+      </div></section>
 
-      <section id="skills" className="bg-muted py-20">
+      <section id="skills" className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHead k="Core Skills" t="What I bring" />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -131,17 +152,17 @@ function Index() {
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-6xl px-6 py-20">
+      <section id="work" className="bg-muted py-20"><div className="mx-auto max-w-6xl px-6">
         <SectionHead k="Featured Project" t="Insurance digital ecosystem" />
         <div className="card-soft grid gap-10 p-8 hover:translate-y-0 md:grid-cols-5 md:p-10">
           <div className="md:col-span-2">
             <div className="space-y-2">
-              {["Open Finance for Insurance", "Online Portals for Insurance", "UAE e-Invoicing Digital Enablement"].map((p) => (
+              {["Open Finance for Insurance", "Online Portals for Insurance", "UAE e-Invoicing Digital Enablement", "Payment Gateway & CyberSource Automation", "AI-Enabled Document Processing"].map((p) => (
                 <p key={p} className="font-display text-lg font-semibold text-primary">{p}</p>
               ))}
             </div>
-            <p className="mt-6 inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Functional / Solution Coordination</p>
-            <p className="mt-6 text-muted-foreground">Supporting the design and implementation of an end-to-end Insurance ecosystem and related integrations and regulatory requirements.</p>
+            <p className="mt-6 inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Delivery, Functional & Solution Coordination</p>
+            <p className="mt-6 text-muted-foreground">Leading the design, integration and implementation of an end-to-end insurance digital ecosystem across General and Medical Insurance — meeting CBUAE and UAE regulatory requirements while improving customer and intermediary journeys.</p>
           </div>
           <div className="grid content-start gap-3 sm:grid-cols-2 md:col-span-3">
             {highlights.map((h) => (
@@ -149,9 +170,9 @@ function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </div></section>
 
-      <section id="approach" className="bg-muted py-20">
+      <section id="approach" className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHead k="Working Approach" t="How I deliver" />
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-7">
