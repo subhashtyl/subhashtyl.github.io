@@ -19,16 +19,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - run: npm install --legacy-peer-deps
-      - run: npm run build
-      - run: cp dist/index.html dist/404.html
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build
+        run: npm run build
+
+      - name: Find build output folder
+        run: |
+          FOUND=""
+          for d in dist dist/client build .output/public out; do
+            if [ -f "$d/index.html" ]; then
+              FOUND="$d"
+              break
+            fi
+          done
+          if [ -z "$FOUND" ]; then
+            echo "ERROR: index.html not found in any known output folder."
+            echo "--- All index.html files in the project ---"
+            find . -name "index.html" -not -path "./node_modules/*"
+            echo "--- Project root ---"
+            ls -la
+            echo "--- dist folder ---"
+            ls -laR dist 2>/dev/null | head -50
+            exit 1
+          fi
+          echo "Using output folder: $FOUND"
+          cp "$FOUND/index.html" "$FOUND/404.html"
+          echo "OUT_DIR=$FOUND" >> $GITHUB_ENV
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ${{ env.OUT_DIR }}
 
   deploy:
     needs: build
