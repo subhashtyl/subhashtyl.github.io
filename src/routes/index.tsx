@@ -4,6 +4,8 @@ import {
   ClipboardList, Workflow, AppWindow, Network, Database, LayoutTemplate, Users,
   Mail, Linkedin, MapPin, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
   Landmark, ScanText, Sparkles, ShieldCheck, MonitorSmartphone,
+  CreditCard, ReceiptText, BarChart3,
+
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -51,7 +53,36 @@ const skills = [
   { icon: Sparkles, t: "AI & Automation", items: ["Generative AI & GPT-Based Use Cases", "Azure AI Document Intelligence", "OCR & Intelligent Document Processing", "Workflow Automation", "Prototyping & UI/UX Flows"] },
 ];
 
-const highlights = ["CBUAE Open Finance APIs", "Near-Real-Time Quotations", "Consent Management", "UAE e-Invoicing Data Capture", "Payment Gateway & CyberSource Automation", "AI Document Processing (OCR / GPT)", "Customer & Intermediary Journeys", "OTP Validation & Status Handling", "System Integration Architecture", "VAPT & Production Readiness"];
+const projectWork = [
+  { icon: MonitorSmartphone, t: "Online Portals — Easy Buy for Insurance", d: "Quotation, purchase and renewal journeys for customers and intermediaries, built for easy self-service buying." },
+  { icon: Landmark, t: "Open Finance for Insurance", d: "CBUAE Open Finance data-sharing APIs, consent management, near-real-time quotations and production certification." },
+  { icon: Network, t: "API Integrations — Partners & Aggregators", d: "Partner, aggregator and comparison-channel connectivity with validated request and response flows." },
+  { icon: CreditCard, t: "Payment Gateway Integrations", d: "Secure online payment flows and gateway automation, including CyberSource-related services." },
+  { icon: Sparkles, t: "AI Feature Integrations into Insurance", d: "Document intelligence, OCR and GPT-based capabilities embedded into insurance workflows." },
+  { icon: ReceiptText, t: "UAE e-Invoicing Digital Enablement", d: "Invoice data capture, issuance workflows and compliance-ready digital enablement." },
+  { icon: BarChart3, t: "Report Automations", d: "Scheduled and event-driven report generation that replaces manual reporting effort." },
+  { icon: Database, t: "Data Analysis", d: "Oracle SQL analysis, reconciliation and insight extraction across insurance platforms." },
+  { icon: Workflow, t: "Solutioning & System Integration", d: "Solution design, prototyping and end-to-end integration across vendors, partners and internal teams." },
+];
+
+const scope = [
+  ["Scope", "General & Medical Insurance"],
+  ["Channels", "Customer, intermediary, partner and aggregator"],
+  ["Regulatory", "CBUAE Open Finance and UAE e-Invoicing"],
+  ["Delivery", "Solutioning through production support"],
+];
+
+const outcomes = [
+  "Faster quotation, purchase and renewal journeys",
+  "Less manual data entry through document automation",
+  "Regulatory initiatives delivered to CBUAE and UAE timelines",
+  "Stable integrations with ongoing production support",
+];
+
+const tech = ["CBUAE Open Finance APIs", "REST API Integration", "CyberSource Payments", "Azure AI Document Intelligence", "Oracle SQL", "UAE e-Invoicing"];
+
+
+
 
 const steps = ["Understand the Requirement", "Simplify the Process", "Design & Prototype", "Define the Integration", "Test & Secure", "Deliver & Release", "Support & Improve"];
 
@@ -156,19 +187,39 @@ function Index() {
         <SectionHead k="Featured Project" t="Insurance digital ecosystem" />
         <div className="card-soft grid gap-10 p-8 hover:translate-y-0 md:grid-cols-5 md:p-10">
           <div className="md:col-span-2">
-            <div className="space-y-2">
-              {["Open Finance for Insurance", "Online Portals for Insurance", "UAE e-Invoicing Digital Enablement", "Payment Gateway & CyberSource Automation", "AI-Enabled Document Processing"].map((p) => (
-                <p key={p} className="font-display text-lg font-semibold text-primary">{p}</p>
+            <p className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Delivery, Functional & Solution Coordination</p>
+            <p className="mt-6 text-muted-foreground">Designing, integrating and implementing an end-to-end insurance digital ecosystem across General and Medical Insurance — meeting CBUAE and UAE regulatory requirements while improving customer, intermediary and partner journeys.</p>
+            <ul className="mt-8 space-y-4 border-t border-border pt-6">
+              {scope.map(([k, v]) => (
+                <li key={k}><p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{k}</p><p className="mt-1 text-sm text-primary">{v}</p></li>
               ))}
+            </ul>
+            <ul className="mt-8 space-y-3 border-t border-border pt-6">
+              {outcomes.map((o) => (
+                <li key={o} className="flex items-start gap-3 text-sm text-muted-foreground"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{o}</li>
+              ))}
+            </ul>
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Technology</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {tech.map((x) => <span key={x} className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-primary">{x}</span>)}
+              </div>
             </div>
-            <p className="mt-6 inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Delivery, Functional & Solution Coordination</p>
-            <p className="mt-6 text-muted-foreground">Leading the design, integration and implementation of an end-to-end insurance digital ecosystem across General and Medical Insurance — meeting CBUAE and UAE regulatory requirements while improving customer and intermediary journeys.</p>
           </div>
+
+
           <div className="grid content-start gap-3 sm:grid-cols-2 md:col-span-3">
-            {highlights.map((h) => (
-              <div key={h} className="flex items-center gap-3 rounded-xl bg-muted px-4 py-3 text-sm"><CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />{h}</div>
+            {projectWork.map(({ icon: I, t, d }, i) => (
+              <div key={t} className={`rounded-xl border border-border bg-muted p-5 ${i === projectWork.length - 1 ? "sm:col-span-2" : ""}`}>
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-background text-primary"><I className="h-4 w-4" /></span>
+                  <h3 className="font-display text-sm font-semibold leading-snug text-primary">{t}</h3>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground">{d}</p>
+              </div>
             ))}
           </div>
+
         </div>
       </div></section>
 
