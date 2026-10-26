@@ -176,19 +176,26 @@ function Index() {
         <SectionHead k="Featured Project" t="Insurance digital ecosystem" />
         <div className="card-soft grid gap-10 p-8 hover:translate-y-0 md:grid-cols-5 md:p-10">
           <div className="md:col-span-2">
-            <div className="space-y-2">
-              {["Open Finance for Insurance", "Online Portals for Insurance", "UAE e-Invoicing Digital Enablement", "Payment Gateway & CyberSource Automation", "AI-Enabled Document Processing"].map((p) => (
-                <p key={p} className="font-display text-lg font-semibold text-primary">{p}</p>
+            <p className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Delivery, Functional & Solution Coordination</p>
+            <p className="mt-6 text-muted-foreground">Designing, integrating and implementing an end-to-end insurance digital ecosystem across General and Medical Insurance — meeting CBUAE and UAE regulatory requirements while improving customer, intermediary and partner journeys.</p>
+            <ul className="mt-8 space-y-4 border-t border-border pt-6">
+              {scope.map(([k, v]) => (
+                <li key={k}><p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{k}</p><p className="mt-1 text-sm text-primary">{v}</p></li>
               ))}
-            </div>
-            <p className="mt-6 inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Delivery, Functional & Solution Coordination</p>
-            <p className="mt-6 text-muted-foreground">Leading the design, integration and implementation of an end-to-end insurance digital ecosystem across General and Medical Insurance — meeting CBUAE and UAE regulatory requirements while improving customer and intermediary journeys.</p>
+            </ul>
           </div>
           <div className="grid content-start gap-3 sm:grid-cols-2 md:col-span-3">
-            {highlights.map((h) => (
-              <div key={h} className="flex items-center gap-3 rounded-xl bg-muted px-4 py-3 text-sm"><CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />{h}</div>
+            {projectWork.map(({ icon: I, t, d }, i) => (
+              <div key={t} className={`rounded-xl border border-border bg-muted p-5 ${i === projectWork.length - 1 ? "sm:col-span-2" : ""}`}>
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-background text-primary"><I className="h-4 w-4" /></span>
+                  <h3 className="font-display text-sm font-semibold leading-snug text-primary">{t}</h3>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground">{d}</p>
+              </div>
             ))}
           </div>
+
         </div>
       </div></section>
 
