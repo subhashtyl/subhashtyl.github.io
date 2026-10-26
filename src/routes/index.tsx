@@ -79,6 +79,9 @@ const outcomes = [
   "Stable integrations with ongoing production support",
 ];
 
+const tech = ["CBUAE Open Finance APIs", "REST API Integration", "CyberSource Payments", "Azure AI Document Intelligence", "Oracle SQL", "UAE e-Invoicing"];
+
+
 
 
 const steps = ["Understand the Requirement", "Simplify the Process", "Design & Prototype", "Define the Integration", "Test & Secure", "Deliver & Release", "Support & Improve"];
@@ -196,7 +199,14 @@ function Index() {
                 <li key={o} className="flex items-start gap-3 text-sm text-muted-foreground"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{o}</li>
               ))}
             </ul>
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Technology</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {tech.map((x) => <span key={x} className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-primary">{x}</span>)}
+              </div>
+            </div>
           </div>
+
 
           <div className="grid content-start gap-3 sm:grid-cols-2 md:col-span-3">
             {projectWork.map(({ icon: I, t, d }, i) => (
