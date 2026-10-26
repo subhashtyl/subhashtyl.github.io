@@ -4,6 +4,8 @@ import {
   ClipboardList, Workflow, AppWindow, Network, Database, LayoutTemplate, Users,
   Mail, Linkedin, MapPin, ArrowRight, CheckCircle2, Briefcase, Code2, PenTool, Rocket,
   Landmark, ScanText, Sparkles, ShieldCheck, MonitorSmartphone,
+  CreditCard, ReceiptText, BarChart3,
+
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -51,7 +53,25 @@ const skills = [
   { icon: Sparkles, t: "AI & Automation", items: ["Generative AI & GPT-Based Use Cases", "Azure AI Document Intelligence", "OCR & Intelligent Document Processing", "Workflow Automation", "Prototyping & UI/UX Flows"] },
 ];
 
-const highlights = ["CBUAE Open Finance APIs", "Near-Real-Time Quotations", "Consent Management", "UAE e-Invoicing Data Capture", "Payment Gateway & CyberSource Automation", "AI Document Processing (OCR / GPT)", "Customer & Intermediary Journeys", "OTP Validation & Status Handling", "System Integration Architecture", "VAPT & Production Readiness"];
+const projectWork = [
+  { icon: MonitorSmartphone, t: "Online Portals — Easy Buy for Insurance", d: "Quotation, purchase and renewal journeys for customers and intermediaries, built for easy self-service buying." },
+  { icon: Landmark, t: "Open Finance for Insurance", d: "CBUAE Open Finance data-sharing APIs, consent management, near-real-time quotations and production certification." },
+  { icon: Network, t: "API Integrations — Partners & Aggregators", d: "Partner, aggregator and comparison-channel connectivity with validated request and response flows." },
+  { icon: CreditCard, t: "Payment Gateway Integrations", d: "Secure online payment flows and gateway automation, including CyberSource-related services." },
+  { icon: Sparkles, t: "AI Feature Integrations into Insurance", d: "Document intelligence, OCR and GPT-based capabilities embedded into insurance workflows." },
+  { icon: ReceiptText, t: "UAE e-Invoicing Digital Enablement", d: "Invoice data capture, issuance workflows and compliance-ready digital enablement." },
+  { icon: BarChart3, t: "Report Automations", d: "Scheduled and event-driven report generation that replaces manual reporting effort." },
+  { icon: Database, t: "Data Analysis", d: "Oracle SQL analysis, reconciliation and insight extraction across insurance platforms." },
+  { icon: Workflow, t: "Solutioning & System Integration", d: "Solution design, prototyping and end-to-end integration across vendors, partners and internal teams." },
+];
+
+const scope = [
+  ["Scope", "General & Medical Insurance"],
+  ["Channels", "Customer, intermediary, partner and aggregator"],
+  ["Regulatory", "CBUAE Open Finance and UAE e-Invoicing"],
+  ["Delivery", "Solutioning through production support"],
+];
+
 
 const steps = ["Understand the Requirement", "Simplify the Process", "Design & Prototype", "Define the Integration", "Test & Secure", "Deliver & Release", "Support & Improve"];
 
