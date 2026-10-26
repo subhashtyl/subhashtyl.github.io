@@ -72,6 +72,14 @@ const scope = [
   ["Delivery", "Solutioning through production support"],
 ];
 
+const outcomes = [
+  "Faster quotation, purchase and renewal journeys",
+  "Less manual data entry through document automation",
+  "Regulatory initiatives delivered to CBUAE and UAE timelines",
+  "Stable integrations with ongoing production support",
+];
+
+
 
 const steps = ["Understand the Requirement", "Simplify the Process", "Design & Prototype", "Define the Integration", "Test & Secure", "Deliver & Release", "Support & Improve"];
 
@@ -183,7 +191,13 @@ function Index() {
                 <li key={k}><p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{k}</p><p className="mt-1 text-sm text-primary">{v}</p></li>
               ))}
             </ul>
+            <ul className="mt-8 space-y-3 border-t border-border pt-6">
+              {outcomes.map((o) => (
+                <li key={o} className="flex items-start gap-3 text-sm text-muted-foreground"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{o}</li>
+              ))}
+            </ul>
           </div>
+
           <div className="grid content-start gap-3 sm:grid-cols-2 md:col-span-3">
             {projectWork.map(({ icon: I, t, d }, i) => (
               <div key={t} className={`rounded-xl border border-border bg-muted p-5 ${i === projectWork.length - 1 ? "sm:col-span-2" : ""}`}>
