@@ -27,37 +27,27 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build
-        run: npm run build
+      - name: Build static site
+        run: npx vite build --config vite.config.pages.ts
 
-      - name: Find build output folder
+      - name: Prepare Pages files
         run: |
-          FOUND=""
-          for d in dist dist/client build .output/public out; do
-            if [ -f "$d/index.html" ]; then
-              FOUND="$d"
-              break
-            fi
-          done
-          if [ -z "$FOUND" ]; then
-            echo "ERROR: index.html not found in any known output folder."
-            echo "--- All index.html files in the project ---"
-            find . -name "index.html" -not -path "./node_modules/*"
-            echo "--- Project root ---"
-            ls -la
+          if [ ! -f dist/client/_shell.html ]; then
+            echo "ERROR: dist/client/_shell.html not found"
             echo "--- dist folder ---"
-            ls -laR dist 2>/dev/null | head -50
+            ls -laR dist 2>/dev/null | head -60
             exit 1
           fi
-          echo "Using output folder: $FOUND"
-          cp "$FOUND/index.html" "$FOUND/404.html"
-          echo "OUT_DIR=$FOUND" >> $GITHUB_ENV
+          cp dist/client/_shell.html dist/client/index.html
+          cp dist/client/_shell.html dist/client/404.html
+          touch dist/client/.nojekyll
+          ls -la dist/client
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.OUT_DIR }}
+          path: dist/client
 
   deploy:
     needs: build
