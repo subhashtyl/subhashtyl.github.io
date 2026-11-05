@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Portfolio structure
+- Keep professional history as structured entries in the single-page portfolio and render it as an unframed chronological section; this keeps employer, role, dates and responsibilities consistent without changing the established design.

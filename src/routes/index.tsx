@@ -12,9 +12,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Subhash Thaliyil — Insurance IT & Digital Transformation" },
-      { name: "description", content: "Assistant Vice President in Dubai leading insurance digital platforms, CBUAE Open Finance, UAE e-Invoicing, API integration and AI-enabled automation." },
+      { name: "description", content: "Subhash Thaliyil, Assistant Vice President – IT at Sukoon Takaful in Dubai. Experience in IIRIS core insurance systems, digital platforms, regulatory technology, API integration and AI-enabled automation." },
       { property: "og:title", content: "Subhash Thaliyil — Portfolio" },
-      { property: "og:description", content: "Insurance IT • Regulatory Technology • API Integration • AI & Intelligent Automation. Dubai, UAE." },
+      { property: "og:description", content: "Assistant Vice President – IT at Sukoon Takaful. Core insurance systems, digital transformation, regulatory technology and intelligent automation across the UAE and India." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -25,14 +25,45 @@ export const Route = createFileRoute("/")({
 const EMAIL = "subhashthaliyil@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/subhash-thaliyil-a41a22b4";
 
+const experience = [
+  {
+    company: "Sukoon Takaful", role: "Assistant Vice President – IT", location: "Dubai, UAE", period: "September 2021 – Present",
+    points: [
+      "Manage IIRIS General Insurance, Medical and Finance systems, digital portals, online payments and traffic upload systems.",
+      "Translate business needs into functional requirements, coordinate vendor gap analysis, and deliver system enhancements, upgrades and integrations.",
+      "Develop and implement customer and intermediary portals, claims portals, dashboards and automation using .NET Core and Oracle.",
+      "Support business teams with production issues, quarter-end and year-end processing, and reinsurance closing activities.",
+      "Coordinate CBUAE Open Finance, UAE e-Invoicing, partner APIs, payment gateways and AI-enabled automation initiatives.",
+    ],
+  },
+  {
+    company: "Orient UNB Takaful (Al Futtaim Group)", role: "Assistant IT Manager", location: "Dubai, UAE", period: "November 2017 – August 2021",
+    points: [
+      "Managed implementation, integration and support for IIRIS General Insurance, Medical and Finance systems, online portals, payments and quotation management.",
+      "Implemented the core medical system and individual medical portal, and enhanced Motor and Marine portals, customer onboarding and tariff configuration.",
+      "Developed in-house applications and reports, automated email and SMS alerts, and coordinated application patches and releases.",
+      "Supported users, month-end and year-end processing, and reinsurance closing activities while coordinating changes with vendors.",
+    ],
+  },
+  {
+    company: "Assuretech Business Solutions Pvt. Ltd.", role: "Senior Software Engineer", location: "Kerala, India", period: "2011 – 2017",
+    points: [
+      "Developed, supported and implemented IIRIS General Insurance, Medical, Finance and Broker systems, including Motor, Marine, Medical and Non-Motor portals.",
+      "Worked as an onsite implementation consultant for insurance clients, resolving code-level issues and managing deployments and version updates.",
+      "Built applications and reports using C#, ASP.NET, Web API, JavaScript, Oracle and SAP Crystal Reports, and mentored new team members.",
+    ],
+  },
+];
+
 const roles = [
-  "Manage digital insurance portals and applications across General and Medical Insurance.",
+  "Manage IIRIS core insurance systems across General Insurance, Medical and Finance, alongside digital portals, payments and traffic upload systems.",
   "Lead business requirements, solution design, change requests, integrations, testing and implementation.",
   "Drive key regulatory initiatives, particularly CBUAE Open Finance and UAE e-Invoicing.",
   "Manage API integrations, payment gateway solutions and automation services, including CyberSource-related automation.",
   "Coordinate with business, IT, infrastructure, security, vendors and external partners to deliver projects and resolve dependencies.",
-  "Provide production support and technical / functional issue resolution for online platforms and integrations.",
+  "Provide technical and functional production support, coordinate application upgrades and patches, and resolve issues across core systems and integrations.",
   "Support digital transformation and process automation to improve insurance operations and customer journeys.",
+  "Support quarter-end and year-end processing, reinsurance closings, and reporting needs across business departments.",
 ];
 
 const expertise = [
@@ -40,33 +71,34 @@ const expertise = [
   { icon: Landmark, t: "Regulatory Technology & Open Finance", d: "CBUAE Open Finance data-sharing APIs, near-real-time quotations, consent management, certification and production readiness." },
   { icon: MonitorSmartphone, t: "Digital Insurance Platforms", d: "Online portals and journeys for quotation, purchase, renewal, customer and intermediary workflows and self-service." },
   { icon: Network, t: "API Integration & Interoperability", d: "Internal and partner APIs, payment gateways, data mapping, request/response validation and integration readiness." },
-  { icon: ScanText, t: "AI, OCR & Document Processing", d: "AI-enabled extraction with Azure AI Document Intelligence, OCR and GPT-based approaches to reduce manual data entry." },
-  { icon: Sparkles, t: "AI Solution Evaluation & Adoption", d: "Assessing AI use cases for business value, accuracy, integration feasibility, limitations and cost." },
+  { icon: ScanText, t: "AI, OCR & Document Processing", d: "Azure AI Document Intelligence, OCR and GPT-based extraction, with use cases assessed for accuracy, business value and integration feasibility." },
+  { icon: Database, t: "Core Insurance Systems", d: "IIRIS General Insurance, Medical, Finance and Broker systems — implementation, enhancements, upgrades and day-to-day support." },
   { icon: Workflow, t: "Digital Transformation & Automation", d: "UAE e-Invoicing data capture, document handling, automated notifications and API-enabled data exchange." },
   { icon: ShieldCheck, t: "Quality, Security & Production Readiness", d: "Testing, UAT, defect tracking, VAPT coordination, remediation follow-up and production support." },
 ];
 
 const skills = [
   { icon: Briefcase, t: "Business & Delivery", items: ["IT Delivery & Project Coordination", "Requirements Analysis", "Stakeholder & Vendor Management", "Change Request Management", "Solution Design", "UAT & Release Readiness"] },
-  { icon: Landmark, t: "Insurance & Regulatory", items: ["General & Medical Insurance Platforms", "UAE Insurance Regulatory Change", "CBUAE Open Finance", "Data-Sharing APIs & Consent", "UAE e-Invoicing"] },
-  { icon: Code2, t: "Technology & Integration", items: ["API Integration & Partner Connectivity", "Payment Gateways (CyberSource)", "Oracle SQL & Data Analysis", "Production Support & Troubleshooting", "VAPT Coordination"] },
+  { icon: Landmark, t: "Insurance & Regulatory", items: ["IIRIS General, Medical, Finance & Broker Systems", "Motor, Marine & Medical Portals", "Reinsurance & Period-End Support", "CBUAE Open Finance & Consent APIs", "UAE e-Invoicing"] },
+  { icon: Code2, t: "Technology & Integration", items: ["C#, ASP.NET Core, MVC & Web API", "JavaScript, jQuery, HTML & JSON", "Oracle SQL, PL/SQL, Toad & Oracle Developer", "REST APIs & CyberSource Payments", "Crystal Reports, Microsoft Reports & QlikView", "Excel & Data Analysis", "Production Support, Releases & VAPT Coordination"] },
   { icon: Sparkles, t: "AI & Automation", items: ["Generative AI & GPT-Based Use Cases", "Azure AI Document Intelligence", "OCR & Intelligent Document Processing", "Workflow Automation", "Prototyping & UI/UX Flows"] },
 ];
 
 const projectWork = [
+  { icon: Database, t: "Core Insurance System Implementation & Support", d: "IIRIS General Insurance, Medical, Finance and Broker systems, including enhancements, upgrades and reinsurance closing support." },
   { icon: MonitorSmartphone, t: "Online Portals — Easy Buy for Insurance", d: "Quotation, purchase and renewal journeys for customers and intermediaries, built for easy self-service buying." },
   { icon: Landmark, t: "Open Finance for Insurance", d: "CBUAE Open Finance data-sharing APIs, consent management, near-real-time quotations and production certification." },
   { icon: Network, t: "API Integrations — Partners & Aggregators", d: "Partner, aggregator and comparison-channel connectivity with validated request and response flows." },
   { icon: CreditCard, t: "Payment Gateway Integrations", d: "Secure online payment flows and gateway automation, including CyberSource-related services." },
   { icon: Sparkles, t: "AI Feature Integrations into Insurance", d: "Document intelligence, OCR and GPT-based capabilities embedded into insurance workflows." },
   { icon: ReceiptText, t: "UAE e-Invoicing Digital Enablement", d: "Invoice data capture, issuance workflows and compliance-ready digital enablement." },
-  { icon: BarChart3, t: "Report Automations", d: "Scheduled and event-driven report generation that replaces manual reporting effort." },
+  { icon: BarChart3, t: "Report Automations", d: "Operational reports and dashboards using Crystal Reports, Microsoft Reports and QlikView, with automated email and SMS notifications." },
   { icon: Database, t: "Data Analysis", d: "Oracle SQL analysis, reconciliation and insight extraction across insurance platforms." },
   { icon: Workflow, t: "Solutioning & System Integration", d: "Solution design, prototyping and end-to-end integration across vendors, partners and internal teams." },
 ];
 
 const scope = [
-  ["Scope", "General & Medical Insurance"],
+  ["Scope", "General Insurance, Medical, Finance & Broker Systems"],
   ["Channels", "Customer, intermediary, partner and aggregator"],
   ["Regulatory", "CBUAE Open Finance and UAE e-Invoicing"],
   ["Delivery", "Solutioning through production support"],
@@ -79,14 +111,14 @@ const outcomes = [
   "Stable integrations with ongoing production support",
 ];
 
-const tech = ["CBUAE Open Finance APIs", "REST API Integration", "CyberSource Payments", "Azure AI Document Intelligence", "Oracle SQL", "UAE e-Invoicing"];
+const tech = ["IIRIS Core Insurance", "C# / ASP.NET Core", "Oracle / PL/SQL", "Crystal Reports / QlikView", "CBUAE Open Finance APIs", "REST API Integration", "CyberSource Payments", "Azure AI Document Intelligence", "UAE e-Invoicing"];
 
 
 
 
 const steps = ["Understand the Requirement", "Simplify the Process", "Design & Prototype", "Define the Integration", "Test & Secure", "Deliver & Release", "Support & Improve"];
 
-const nav = [["About", "about"], ["Roles", "roles"], ["Expertise", "expertise"], ["Skills", "skills"], ["Work", "work"], ["Approach", "approach"], ["Contact", "contact"]];
+const nav = [["About", "about"], ["Experience", "experience"], ["Roles", "roles"], ["Expertise", "expertise"], ["Skills", "skills"], ["Work", "work"], ["Approach", "approach"], ["Contact", "contact"]];
 
 function SectionHead({ k, t }: { k: string; t: string }) {
   return (
@@ -112,8 +144,8 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#top" className="font-display text-lg font-semibold text-primary">Subhash Thaliyil</a>
-          <nav className="hidden gap-7 text-sm text-muted-foreground md:flex">
+          <a href="#top" className="shrink-0 font-display text-lg font-semibold text-primary">Subhash Thaliyil</a>
+          <nav className="hidden gap-3 text-xs text-muted-foreground md:flex lg:gap-7 lg:text-sm">
             {nav.map(([l, id]) => <a key={id} href={`#${id}`} className="transition hover:text-primary">{l}</a>)}
           </nav>
         </div>
@@ -124,9 +156,10 @@ function Index() {
         <div className="animate-rise md:order-1">
           <p className="flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4" /> Dubai, UAE</p>
           <h1 className="mt-4 text-5xl font-semibold text-primary md:text-6xl">Subhash Thaliyil</h1>
-          <p className="mt-3 text-xl font-medium">Assistant Vice President</p>
+          <p className="mt-3 text-xl font-medium">Assistant Vice President – IT</p>
+          <p className="mt-1 text-base font-medium text-muted-foreground">Sukoon Takaful</p>
           <p className="mt-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">Insurance IT • Digital Transformation • Regulatory Technology</p>
-          <p className="mt-6 max-w-lg text-lg text-muted-foreground">Translating business and regulatory requirements into secure, practical technology solutions — across digital insurance platforms, API integration and AI-enabled automation.</p>
+          <p className="mt-6 max-w-lg text-lg text-muted-foreground">Turning business and regulatory requirements into practical technology solutions — across core insurance systems, digital platforms, API integration and AI-enabled automation.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90">View My Work <ArrowRight className="h-4 w-4" /></a>
             <a href="#contact" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm font-medium text-primary transition hover:bg-accent">Contact Me</a>
@@ -138,10 +171,34 @@ function Index() {
         <div className="mx-auto max-w-4xl px-6">
           <SectionHead k="About Me" t="Turning requirements into working solutions" />
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>Insurance IT and digital transformation professional coordinating end-to-end technology delivery across regulatory initiatives, digital insurance platforms, API integrations and process automation.</p>
-            <p>I work across business teams, IT, compliance, technology vendors and external partners to turn business and regulatory requirements into practical solutions — from requirements definition and solution coordination through development, integration, testing, UAT and production readiness.</p>
-            <p>My focus areas include UAE insurance technology, CBUAE Open Finance, customer and intermediary digital journeys, and the practical application of AI-enabled document processing and intelligent automation — aligning regulatory obligations, operational needs and technology to deliver secure, efficient, customer-centric insurance solutions.</p>
+            <p>I am an insurance IT professional with experience in the UAE and India, spanning software development, core system implementation, business analysis and digital transformation. I currently work as Assistant Vice President – IT at Sukoon Takaful in Dubai.</p>
+            <p>My background includes hands-on work with IIRIS General Insurance, Medical, Finance and Broker systems, customer and intermediary portals, payments, reporting and reinsurance closing support. I work with business teams and technology vendors from requirements and solution design through testing, implementation and production support.</p>
+            <p>Alongside core system delivery, I coordinate CBUAE Open Finance, UAE e-Invoicing, partner integrations and AI-enabled document processing to improve insurance operations and customer journeys.</p>
           </div>
+        </div>
+      </section>
+
+      <section id="experience" className="mx-auto max-w-6xl px-6 pt-20">
+        <SectionHead k="Professional Experience" t="Insurance technology across the UAE & India" />
+        <div className="divide-y divide-border">
+          {experience.map(({ company, role, location, period, points }) => (
+            <article key={company} className="grid gap-5 py-8 first:pt-0 md:grid-cols-3 md:gap-10">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">{period}</p>
+                <h3 className="mt-3 text-lg font-semibold text-primary">{company}</h3>
+                <p className="mt-2 font-medium">{role}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{location}</p>
+              </div>
+              <ul className="space-y-3 md:col-span-2">
+                {points.map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -188,7 +245,7 @@ function Index() {
         <div className="card-soft grid gap-10 p-8 hover:translate-y-0 md:grid-cols-5 md:p-10">
           <div className="md:col-span-2">
             <p className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-primary">Role: Delivery, Functional & Solution Coordination</p>
-            <p className="mt-6 text-muted-foreground">Designing, integrating and implementing an end-to-end insurance digital ecosystem across General and Medical Insurance — meeting CBUAE and UAE regulatory requirements while improving customer, intermediary and partner journeys.</p>
+            <p className="mt-6 text-muted-foreground">Implementing and supporting core insurance systems alongside digital portals, payments, reporting and partner integrations — connecting General Insurance, Medical and Finance operations with regulatory initiatives and better customer journeys.</p>
             <ul className="mt-8 space-y-4 border-t border-border pt-6">
               {scope.map(([k, v]) => (
                 <li key={k}><p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{k}</p><p className="mt-1 text-sm text-primary">{v}</p></li>
@@ -210,7 +267,7 @@ function Index() {
 
           <div className="grid content-start gap-3 sm:grid-cols-2 md:col-span-3">
             {projectWork.map(({ icon: I, t, d }, i) => (
-              <div key={t} className={`rounded-xl border border-border bg-muted p-5 ${i === projectWork.length - 1 ? "sm:col-span-2" : ""}`}>
+              <div key={t} className={`rounded-xl border border-border bg-muted p-5 ${projectWork.length % 2 === 1 && i === projectWork.length - 1 ? "sm:col-span-2" : ""}`}>
                 <div className="flex items-start gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-background text-primary"><I className="h-4 w-4" /></span>
                   <h3 className="font-display text-sm font-semibold leading-snug text-primary">{t}</h3>
