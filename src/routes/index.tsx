@@ -88,15 +88,14 @@ function WorkPanel({ title, description, items }: { title: string; description: 
         <span className="text-xs font-medium text-muted-foreground">{items.length} areas</span>
       </div>
       <p className="mb-2 max-w-2xl text-sm leading-6 text-muted-foreground">{description}</p>
-      <ol className="divide-y divide-border border-t border-border">
-        {items.map((item, i) => (
-          <li key={item.title} className="grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-1 py-4 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline">
-            <span aria-hidden="true" className="text-xs font-medium tabular-nums text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
-            <h4 className="text-sm font-semibold leading-snug">{item.title}</h4>
-            <p className="col-start-2 text-sm leading-6 text-muted-foreground md:col-start-3">{item.description}</p>
+      <ul className="divide-y divide-border border-t border-border">
+        {items.map((item) => (
+          <li key={item.title} className="group grid gap-x-6 gap-y-1.5 py-3.5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.4fr)] md:items-center">
+            <h4 className="flex items-center gap-3 text-sm font-semibold leading-snug transition-colors group-hover:text-primary"><span aria-hidden="true" className="h-5 w-0.5 shrink-0 rounded-full bg-border transition-colors duration-300 group-hover:bg-primary" />{item.title}</h4>
+            <p className="text-sm leading-6 text-muted-foreground md:border-l md:border-border md:pl-6">{item.description}</p>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 }
