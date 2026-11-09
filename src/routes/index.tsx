@@ -6,6 +6,7 @@ import {
   ArrowRight, ArrowUpRight, BarChart3, Briefcase, CreditCard, Database,
   Landmark, Linkedin, Mail, MapPin, Menu, MonitorSmartphone, Network,
   ReceiptText, ScanText, ShieldCheck, Sparkles, Workflow, X,
+  Search, SlidersHorizontal, PenTool, Rocket, Wrench,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -61,10 +62,11 @@ const work = [
 ];
 
 const steps = ["Understand the requirement", "Simplify the process", "Design & prototype", "Define the integration", "Test & secure", "Deliver & release", "Support & improve"];
+const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Rocket, Wrench];
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
-function SectionHead({ number, title }: { number: string; title: string }) {
-  return <div className="mb-12 flex items-center gap-4 self-start"><span className="font-mono text-xs text-primary">{number}</span><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
+function SectionHead({ title }: { title: string }) {
+  return <div className="mb-12 self-start"><span aria-hidden="true" className="mb-5 block h-0.5 w-10 bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
 }
 
 function Index() {
@@ -96,29 +98,32 @@ function Index() {
         </section>
 
         <section id="profile" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8">
-          <div className="grid gap-0"><SectionHead number="01" title="Professional profile" /><div>
+          <div className="grid gap-0"><SectionHead title="Professional profile" /><div>
             <p className="max-w-3xl text-lg leading-8 text-muted-foreground">I coordinate end-to-end technology delivery across digital insurance platforms, core systems, integrations and automation. Working with business, IT, compliance, vendors and external partners, I turn operational and regulatory requirements into practical solutions—from design and development to implementation and production readiness.</p>
             <h3 className="mt-12 text-base font-semibold">Delivery experience</h3>
             <ul className="mt-6 grid gap-x-16 gap-y-6 md:grid-cols-2">{responsibilities.map((point) => <li key={point} className="flex items-start gap-3 text-base leading-8 text-muted-foreground"><span className="mt-4 h-px w-3 shrink-0 bg-primary" /><span>{point}</span></li>)}</ul>
           </div></div>
         </section>
 
-        <section id="expertise" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead number="02" title="Areas of expertise" />
+        <section id="expertise" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Areas of expertise" />
           <div className="grid gap-x-16 gap-y-10 md:grid-cols-2">{expertise.map(({ icon: Icon, title, description }) => <article key={title} className="border-t border-border pt-8"><Icon className="mb-5 size-6 text-primary" /><h3 className="text-lg font-semibold">{title}</h3><p className="mt-4 text-base leading-8 text-muted-foreground">{description}</p></article>)}</div>
         </div></section>
 
-        <section id="skills" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead number="03" title="Core skills" />
+        <section id="skills" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Core skills" />
           <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">{skills.map(({ icon: Icon, title, items }) => <div key={title} className="border-t border-border pt-7"><div className="flex items-start gap-2"><Icon className="mt-0.5 size-4 shrink-0 text-primary" /><h3 className="text-lg font-semibold">{title}</h3></div><ul className="mt-6 space-y-3">{items.map(item => <li key={item} className="text-base leading-7 text-muted-foreground">{item}</li>)}</ul></div>)}</div>
         </section>
 
-        <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead number="04" title="Selected work" />
+        <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Selected work" />
           <div className="mb-12 max-w-3xl space-y-5"><h3 className="text-xl font-semibold leading-snug md:text-2xl">Insurance digital ecosystem</h3><p className="text-base leading-8 text-muted-foreground">Designing, integrating and implementing digital services across General and Medical Insurance to meet CBUAE and UAE regulatory requirements and improve customer, intermediary and partner journeys.</p></div>
-          <div className="grid gap-6 md:grid-cols-2">{work.map(({ icon: Icon, title, description }, i) => <article key={title} className="card-soft flex gap-4 p-7 md:gap-5 md:p-8"><span className="mt-1 font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold leading-snug">{title}</h3><Icon className="mt-0.5 size-4 shrink-0 text-primary" /></div><p className="mt-4 text-base leading-8 text-muted-foreground">{description}</p></div></article>)}</div>
+          <div className="grid gap-6 md:grid-cols-2">{work.map(({ icon: Icon, title, description }) => <article key={title} className="card-soft flex gap-4 p-7 md:gap-5 md:p-8"><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold leading-snug">{title}</h3><Icon className="mt-0.5 size-4 shrink-0 text-primary" /></div><p className="mt-4 text-base leading-8 text-muted-foreground">{description}</p></div></article>)}</div>
         </div></section>
 
-        <section id="approach" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead number="05" title="Working approach" /><ol className="grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">{steps.map((step, i) => <li key={step} className="border-t border-border pt-4"><span className="font-mono text-xs text-primary">0{i + 1}</span><p className="mt-4 text-base font-medium leading-relaxed">{step}</p></li>)}</ol></section>
+        <section id="approach" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
+          const Icon = stepIcons[i] ?? Workflow;
+          return <li key={step} className="flex items-center gap-5 border-t border-border pt-6"><span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-primary"><Icon aria-hidden="true" className="size-5" /></span><p className="flex-1 text-base font-medium leading-relaxed">{step}</p>{i < steps.length - 1 && <ArrowRight aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />}</li>;
+        })}</ol></section>
 
-        <section id="contact" className="border-t border-border bg-muted"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-24 lg:px-8"><div><div className="mb-5 flex items-center gap-4"><span className="font-mono text-xs text-primary">06</span><h2 className="text-2xl font-semibold md:text-3xl">Contact</h2></div><p className="text-base text-muted-foreground">Subhash Thaliyil · Dubai, UAE</p></div><div className="min-w-0"><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 text-left hover:bg-accent hover:text-accent-foreground"><a href={`mailto:${EMAIL}`}><Mail /><span className="min-w-0 flex-1"><span className="block text-xs text-muted-foreground">Email</span><span className="mt-1 block whitespace-normal break-all">{EMAIL}</span></span><ArrowUpRight /></a></Button><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 hover:bg-accent hover:text-accent-foreground"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin /><span className="flex-1 text-left"><span className="block text-xs text-muted-foreground">LinkedIn</span><span className="mt-1 block">Subhash Thaliyil</span></span><ArrowUpRight /></a></Button></div></div></section>
+        <section id="contact" className="border-t border-border bg-muted"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-24 lg:px-8"><div><SectionHead title="Contact" /><p className="text-base text-muted-foreground">Subhash Thaliyil · Dubai, UAE</p></div><div className="min-w-0"><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 text-left hover:bg-accent hover:text-accent-foreground"><a href={`mailto:${EMAIL}`}><Mail /><span className="min-w-0 flex-1"><span className="block text-xs text-muted-foreground">Email</span><span className="mt-1 block whitespace-normal break-all">{EMAIL}</span></span><ArrowUpRight /></a></Button><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 hover:bg-accent hover:text-accent-foreground"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin /><span className="flex-1 text-left"><span className="block text-xs text-muted-foreground">LinkedIn</span><span className="mt-1 block">Subhash Thaliyil</span></span><ArrowUpRight /></a></Button></div></div></section>
       </main>
       <footer className="border-t border-border"><div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-6 text-xs text-muted-foreground lg:px-8"><span>© 2026 Subhash Thaliyil</span><Button asChild variant="ghost" size="sm"><a href="#top">Back to top <ArrowUpRight className="size-3" /></a></Button></div></footer>
     </div>

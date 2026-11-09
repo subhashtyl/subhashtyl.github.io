@@ -12,4 +12,4 @@
 ## Portfolio structure
 - Keep portfolio content in structured lists within the single-page route; this makes source-specific content easy to review without introducing duplicate sections.
 - Keep delivery responsibilities in the profile, expertise as focus areas, skills as a compact inventory and selected work as delivery examples; this separates scope from practical evidence without repeating responsibility lists.
-- Use numbered, unframed editorial sections and reserve cards for selected-work entries; this keeps the professional portfolio readable without repetitive boxed layouts.
+- Use unframed editorial sections and reserve cards for selected-work entries; this keeps the professional portfolio readable without repetitive boxed layouts.
