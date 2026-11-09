@@ -61,11 +61,6 @@ const work = [
   { title: "Solution design & prototyping", description: "End-to-end design and integration across teams, vendors and partners." },
 ];
 
-const workGroups = [
-  { id: "ecosystem", label: "Insurance digital ecosystem", description: "Digital services across General and Medical Insurance, aligned with CBUAE and UAE regulatory requirements.", items: work },
-  { id: "core-systems", label: "Core insurance systems management", description: "IIRIS General Insurance, Medical and Finance systems run for stability and timely period closing.", items: coreSystems },
-];
-
 const steps = ["Understand the requirement", "Simplify the process", "Design & prototype", "Define the integration", "Test & secure", "Deliver & release", "Support & improve"];
 const coreSystems = [
   { title: "Month-end & year-end closing", description: "Closing activities, system validations and new-period setup." },
@@ -73,6 +68,10 @@ const coreSystems = [
   { title: "System enhancements", description: "Changes, upgrades and patches managed with vendors." },
   { title: "Production support", description: "L3/L4 support coordination and resolution of system and data issues." },
   { title: "Testing & releases", description: "Testing, UAT and production deployments." },
+];
+const workGroups = [
+  { id: "ecosystem", label: "Insurance digital ecosystem", description: "Digital services across General and Medical Insurance, aligned with CBUAE and UAE regulatory requirements.", items: work },
+  { id: "core-systems", label: "Core insurance systems management", description: "IIRIS General Insurance, Medical and Finance systems run for stability and timely period closing.", items: coreSystems },
 ];
 const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Rocket, Wrench];
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
@@ -152,7 +151,7 @@ function Index() {
               </button>
             ))}
           </div>
-          <WorkPanel description={workGroups[workTab].description} items={workGroups[workTab].items} />
+          <WorkPanel description={(workGroups[workTab] ?? workGroups[0])!.description} items={(workGroups[workTab] ?? workGroups[0])!.items} />
         </div></section>
 
         <section id="approach" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-6 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
