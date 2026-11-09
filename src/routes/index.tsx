@@ -66,7 +66,7 @@ const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Roc
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
 function SectionHead({ title }: { title: string }) {
-  return <div className="mb-12 self-start"><span aria-hidden="true" className="mb-5 block h-0.5 w-10 bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
+  return <div className="mb-12 self-start"><span aria-hidden="true" className="mb-5 block h-1 w-10 rounded-sm bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
 }
 
 function Index() {
@@ -76,10 +76,10 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6 lg:px-8">
           <Button asChild variant="ghost" className="gap-3 px-0 hover:bg-transparent"><a href="#top" aria-label="Subhash Thaliyil — back to top"><span className="flex size-9 items-center justify-center rounded-md bg-primary font-display text-sm text-primary-foreground">ST</span><span className="text-sm font-semibold">Subhash Thaliyil</span></a></Button>
-          <nav aria-label="Main navigation" className="hidden items-center gap-2 md:flex">{nav.map(([label, id]) => <Button asChild variant="ghost" size="sm" key={id}><a href={`#${id}`}>{label}</a></Button>)}</nav>
-          <Button variant="ghost" size="icon" className="md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</Button>
+          <nav aria-label="Main navigation" className="hidden items-center gap-2 lg:flex">{nav.map(([label, id]) => <Button asChild variant="ghost" size="sm" key={id}><a href={`#${id}`}>{label}</a></Button>)}</nav>
+          <Button variant="ghost" size="icon" className="lg:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</Button>
         </div>
-        {menuOpen && <nav id="mobile-nav" aria-label="Mobile navigation" className="grid grid-cols-2 gap-1 border-t border-border px-5 py-3 md:hidden">{nav.map(([label, id]) => <Button asChild variant="ghost" key={id} className="justify-start"><a href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a></Button>)}</nav>}
+        {menuOpen && <nav id="mobile-nav" aria-label="Mobile navigation" className="grid grid-cols-2 gap-1 border-t border-border px-5 py-3 lg:hidden">{nav.map(([label, id]) => <Button asChild variant="ghost" key={id} className="justify-start"><a href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a></Button>)}</nav>}
       </header>
 
       <main>
@@ -90,7 +90,7 @@ function Index() {
               <p className="mb-5 flex items-center gap-2 text-xs font-medium text-muted-foreground"><MapPin className="size-3.5 text-primary" /> Dubai, UAE</p>
               <h1 className="text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">Subhash Thaliyil</h1>
               <p className="mt-5 text-xl font-medium text-primary md:text-2xl">Assistant Vice President – IT</p>
-              <p className="mt-4 max-w-xl text-sm font-medium leading-relaxed">Insurance IT | Digital Transformation | Regulatory Technology</p>
+              <p className="mt-4 max-w-xl border-l-2 border-primary/30 pl-4 text-sm font-medium leading-7">Insurance IT | Digital Transformation | Regulatory Technology</p>
               <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">Driving practical technology solutions and digital transformation across insurance operations, customer journeys, API integrations and regulatory initiatives, with a focus on AI-enabled automation, operational efficiency and customer experience.</p>
               <div className="mt-8 flex flex-wrap gap-4"><Button asChild size="lg"><a href="#work">View selected work <ArrowRight /></a></Button><Button asChild size="lg" variant="outline"><a href={`mailto:${EMAIL}`}>Get in touch <Mail /></a></Button></div>
             </div>
@@ -106,16 +106,16 @@ function Index() {
         </section>
 
         <section id="expertise" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Areas of expertise" />
-          <div className="grid gap-x-16 gap-y-10 md:grid-cols-2">{expertise.map(({ icon: Icon, title, description }) => <article key={title} className="border-t border-border pt-8"><Icon className="mb-5 size-6 text-primary" /><h3 className="text-lg font-semibold">{title}</h3><p className="mt-4 text-base leading-8 text-muted-foreground">{description}</p></article>)}</div>
+          <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">{expertise.map(({ icon: Icon, title, description }) => <article key={title} className="flex items-start gap-5 border-t border-border pt-8"><span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-background text-primary"><Icon aria-hidden="true" className="size-5" /></span><div className="min-w-0"><h3 className="text-lg font-semibold leading-snug">{title}</h3><p className="mt-3 text-base leading-7 text-muted-foreground">{description}</p></div></article>)}</div>
         </div></section>
 
         <section id="skills" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Core skills" />
-          <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">{skills.map(({ icon: Icon, title, items }) => <div key={title} className="border-t border-border pt-7"><div className="flex items-start gap-2"><Icon className="mt-0.5 size-4 shrink-0 text-primary" /><h3 className="text-lg font-semibold">{title}</h3></div><ul className="mt-6 space-y-3">{items.map(item => <li key={item} className="text-base leading-7 text-muted-foreground">{item}</li>)}</ul></div>)}</div>
+          <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">{skills.map(({ icon: Icon, title, items }) => <div key={title} className="border-t border-border pt-7"><div className="flex items-center gap-3"><Icon aria-hidden="true" className="size-5 shrink-0 text-primary" /><h3 className="text-lg font-semibold">{title}</h3></div><ul className="mt-6 divide-y divide-border">{items.map(item => <li key={item} className="flex items-start gap-3 py-3 text-base leading-7 text-muted-foreground"><span aria-hidden="true" className="mt-3 size-1 shrink-0 rounded-full bg-primary/50" /><span>{item}</span></li>)}</ul></div>)}</div>
         </section>
 
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Selected work" />
           <div className="mb-12 max-w-3xl space-y-5"><h3 className="text-xl font-semibold leading-snug md:text-2xl">Insurance digital ecosystem</h3><p className="text-base leading-8 text-muted-foreground">Designing, integrating and implementing digital services across General and Medical Insurance to meet CBUAE and UAE regulatory requirements and improve customer, intermediary and partner journeys.</p></div>
-          <div className="grid gap-6 md:grid-cols-2">{work.map(({ icon: Icon, title, description }) => <article key={title} className="card-soft flex gap-4 p-7 md:gap-5 md:p-8"><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold leading-snug">{title}</h3><Icon className="mt-0.5 size-4 shrink-0 text-primary" /></div><p className="mt-4 text-base leading-8 text-muted-foreground">{description}</p></div></article>)}</div>
+          <div className="grid gap-6 md:grid-cols-2">{work.map(({ icon: Icon, title, description }) => <article key={title} className="card-soft flex gap-4 border-t-2 border-t-primary/30 p-7 md:gap-5 md:p-8"><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold leading-snug">{title}</h3><Icon className="mt-0.5 size-4 shrink-0 text-primary" /></div><p className="mt-4 text-base leading-7 text-muted-foreground">{description}</p></div></article>)}</div>
         </div></section>
 
         <section id="approach" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
@@ -123,7 +123,7 @@ function Index() {
           return <li key={step} className="flex items-center gap-5 border-t border-border pt-6"><span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-primary"><Icon aria-hidden="true" className="size-5" /></span><p className="flex-1 text-base font-medium leading-relaxed">{step}</p>{i < steps.length - 1 && <ArrowRight aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />}</li>;
         })}</ol></section>
 
-        <section id="contact" className="border-t border-border bg-muted"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-24 lg:px-8"><div><SectionHead title="Contact" /><p className="text-base text-muted-foreground">Subhash Thaliyil · Dubai, UAE</p></div><div className="min-w-0"><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 text-left hover:bg-accent hover:text-accent-foreground"><a href={`mailto:${EMAIL}`}><Mail /><span className="min-w-0 flex-1"><span className="block text-xs text-muted-foreground">Email</span><span className="mt-1 block whitespace-normal break-all">{EMAIL}</span></span><ArrowUpRight /></a></Button><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 hover:bg-accent hover:text-accent-foreground"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin /><span className="flex-1 text-left"><span className="block text-xs text-muted-foreground">LinkedIn</span><span className="mt-1 block">Subhash Thaliyil</span></span><ArrowUpRight /></a></Button></div></div></section>
+        <section id="contact" className="border-t border-border bg-muted"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-24 lg:px-8"><div><SectionHead title="Contact" /><p className="text-base text-muted-foreground">Subhash Thaliyil · Dubai, UAE</p></div><div className="min-w-0"><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 text-left hover:bg-accent hover:text-accent-foreground"><a href={`mailto:${EMAIL}`}><Mail className="text-primary" /><span className="min-w-0 flex-1"><span className="block text-xs text-muted-foreground">Email</span><span className="mt-1 block whitespace-normal break-all">{EMAIL}</span></span><ArrowUpRight /></a></Button><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 hover:bg-accent hover:text-accent-foreground"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin className="text-primary" /><span className="flex-1 text-left"><span className="block text-xs text-muted-foreground">LinkedIn</span><span className="mt-1 block">Subhash Thaliyil</span></span><ArrowUpRight /></a></Button></div></div></section>
       </main>
       <footer className="border-t border-border"><div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-6 text-xs text-muted-foreground lg:px-8"><span>© 2026 Subhash Thaliyil</span><Button asChild variant="ghost" size="sm"><a href="#top">Back to top <ArrowUpRight className="size-3" /></a></Button></div></footer>
     </div>
