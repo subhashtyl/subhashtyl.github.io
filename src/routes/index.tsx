@@ -64,7 +64,7 @@ const steps = ["Understand the requirement", "Simplify the process", "Design & p
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
 function SectionHead({ number, title }: { number: string; title: string }) {
-  return <div className="mb-10 flex items-center gap-4"><span className="font-mono text-xs text-primary">{number}</span><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
+  return <div className="mb-10 flex items-center gap-4 self-start"><span className="font-mono text-xs text-primary">{number}</span><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
 }
 
 function Index() {
