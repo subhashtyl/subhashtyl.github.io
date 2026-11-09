@@ -11,3 +11,4 @@
 
 ## Portfolio structure
 - Keep professional history as structured entries in the single-page portfolio and render it as an unframed chronological section; this keeps employer, role, dates and responsibilities consistent without changing the established design.
+- Keep current responsibilities in career history, expertise as focus areas, skills as a compact inventory and selected work as delivery examples; avoid parallel sections repeating the same responsibility lists.
