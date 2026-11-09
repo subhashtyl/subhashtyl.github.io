@@ -99,7 +99,7 @@ function Index() {
               <p className="mt-5 text-xl font-medium text-primary md:text-2xl">Assistant Vice President – IT</p>
               <p className="mt-4 max-w-xl border-l-2 border-primary/30 pl-4 text-sm font-medium leading-7">Insurance IT | Digital Transformation | Regulatory Technology</p>
               <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">Driving practical technology solutions and digital transformation across insurance operations, customer journeys, API integrations and regulatory initiatives, with a focus on AI-enabled automation, operational efficiency and customer experience.</p>
-              <div className="mt-8 flex flex-wrap gap-4"><Button asChild size="lg"><a href="#work">View selected work <ArrowRight /></a></Button><Button asChild size="lg" variant="outline"><a href={`mailto:${EMAIL}`}>Get in touch <Mail /></a></Button></div>
+              <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap sm:gap-4"><Button asChild size="lg" className="w-full sm:w-auto"><a href="#work">View selected work <ArrowRight /></a></Button><Button asChild size="lg" variant="outline" className="w-full sm:w-auto"><a href={`mailto:${EMAIL}`}>Get in touch <Mail /></a></Button></div>
             </div>
           </div>
         </section>
