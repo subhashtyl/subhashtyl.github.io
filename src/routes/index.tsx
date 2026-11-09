@@ -69,6 +69,10 @@ const coreSystems = [
   { title: "Production support", description: "L3/L4 support coordination and resolution of system and data issues." },
   { title: "Testing & releases", description: "Testing, UAT and production deployments." },
 ];
+const workGroups = [
+  { id: "ecosystem", label: "Insurance digital ecosystem", description: "Digital services across General and Medical Insurance, aligned with CBUAE and UAE regulatory requirements.", items: work },
+  { id: "core-systems", label: "Core insurance systems management", description: "IIRIS General Insurance, Medical and Finance systems run for stability and timely period closing.", items: coreSystems },
+];
 const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Rocket, Wrench];
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
@@ -76,31 +80,26 @@ function SectionHead({ title }: { title: string }) {
   return <div className="mb-8 self-start"><span aria-hidden="true" className="mb-4 block h-1 w-10 rounded-sm bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
 }
 
-function WorkPanel({ title, description, items }: { title: string; description: string; items: { title: string; description: string }[] }) {
+function WorkPanel({ description, items }: { description: string; items: { title: string; description: string }[] }) {
   return (
-    <article className="card-soft overflow-hidden rounded-xl">
-      <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-5 py-5 md:px-7">
-        <div className="min-w-0">
-          <h3 className="text-lg font-semibold leading-snug">{title}</h3>
-          <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted-foreground">{description}</p>
-        </div>
-        <span className="shrink-0 rounded-full bg-accent px-3 py-1 text-xs font-medium text-primary">{items.length} areas</span>
-      </div>
+    <div className="card-soft overflow-hidden rounded-xl">
+      <p className="border-b border-border px-5 py-4 text-sm leading-6 text-muted-foreground md:px-7">{description}</p>
       <ol className="divide-y divide-border">
         {items.map((item, i) => (
-          <li key={item.title} className="grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-1 px-5 py-4 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline md:px-7">
+          <li key={item.title} className="grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-1 px-5 py-4 transition-colors hover:bg-accent/40 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline md:px-7">
             <span aria-hidden="true" className="text-xs font-medium tabular-nums text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
             <h4 className="text-sm font-semibold leading-snug">{item.title}</h4>
             <p className="col-start-2 text-sm leading-6 text-muted-foreground md:col-start-3">{item.description}</p>
           </li>
         ))}
       </ol>
-    </article>
+    </div>
   );
 }
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [workTab, setWorkTab] = useState(0);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
@@ -144,10 +143,15 @@ function Index() {
         </section>
 
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Selected work" />
-          <div className="grid gap-6">
-            <WorkPanel title="Insurance digital ecosystem" description="Digital services across General and Medical Insurance, aligned with CBUAE and UAE regulatory requirements." items={work} />
-            <WorkPanel title="Core insurance systems management" description="IIRIS General Insurance, Medical and Finance systems run for stability and timely period closing." items={coreSystems} />
+          <div role="tablist" aria-label="Selected work areas" className="mb-6 grid gap-3 sm:grid-cols-2">
+            {workGroups.map((group, i) => (
+              <button key={group.id} type="button" role="tab" aria-selected={workTab === i} onClick={() => setWorkTab(i)} className={`flex items-center justify-between gap-3 rounded-xl border px-5 py-4 text-left transition-colors ${workTab === i ? "border-primary bg-primary text-primary-foreground shadow-soft" : "border-border bg-background hover:border-primary/40"}`}>
+                <span className="text-sm font-semibold leading-snug">{group.label}</span>
+                <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${workTab === i ? "bg-primary-foreground/15 text-primary-foreground" : "bg-accent text-primary"}`}>{group.items.length} areas</span>
+              </button>
+            ))}
           </div>
+          <WorkPanel description={(workGroups[workTab] ?? workGroups[0])!.description} items={(workGroups[workTab] ?? workGroups[0])!.items} />
         </div></section>
 
         <section id="approach" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-6 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
