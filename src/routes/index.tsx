@@ -131,7 +131,8 @@ function Index() {
               <h1 className="text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">Subhash<br className="hidden md:block" /> Thaliyil</h1>
               <p className="mt-5 text-lg font-medium">Assistant Vice President – IT</p>
               <p className="mt-1 text-base text-primary">Sukoon Takaful</p>
-              <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">Practical technology solutions for insurance operations, digital journeys and regulatory change.</p>
+              <p className="mt-4 text-sm font-medium text-foreground">Insurance IT | Digital Transformation | Regulatory Technology</p>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Driving practical technology solutions and digital transformation across insurance operations, customer journeys, API integrations and regulatory initiatives, with a focus on AI-enabled automation, operational efficiency and customer experience.</p>
               <div className="mt-7 flex flex-wrap gap-3"><Button asChild size="lg"><a href="#experience">Explore experience <ArrowRight /></a></Button><Button asChild size="lg" variant="outline"><a href={`mailto:${EMAIL}`}>Get in touch <Mail /></a></Button></div>
             </div>
           </div>
