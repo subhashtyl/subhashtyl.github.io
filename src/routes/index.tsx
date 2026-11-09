@@ -3,9 +3,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import portrait from "@/assets/subhash-portrait.jpg";
 import {
-  ArrowRight, ArrowUpRight, BarChart3, Briefcase, CreditCard, Database,
+  ArrowRight, ArrowUpRight, Briefcase, Database,
   Landmark, Linkedin, Mail, MapPin, Menu, MonitorSmartphone, Network,
-  ReceiptText, ScanText, ShieldCheck, Sparkles, Workflow, X,
+  ScanText, ShieldCheck, Sparkles, Workflow, X,
   Search, SlidersHorizontal, PenTool, Rocket, Wrench,
 } from "lucide-react";
 
@@ -51,29 +51,52 @@ const skills = [
 ];
 
 const work = [
-  { icon: MonitorSmartphone, title: "Online insurance portals", description: "Easy-buy quotation, purchase, renewal and self-service journeys for customers and intermediaries." },
-  { icon: Landmark, title: "Open Finance for insurance", description: "Data-sharing APIs, consent management, near-real-time quotations and production certification." },
-  { icon: Network, title: "Partner & aggregator integrations", description: "Connectivity with partners, aggregators and comparison channels, with validated request and response flows." },
-  { icon: CreditCard, title: "Payment gateway integrations", description: "Secure online payments and gateway automation, including CyberSource services." },
-  { icon: Sparkles, title: "AI integrations in insurance", description: "Document intelligence and GPT-based capabilities embedded into insurance journeys and operations." },
-  { icon: ReceiptText, title: "UAE e-Invoicing enablement", description: "Invoice data capture, issuance workflows and compliance-ready digital processes." },
-  { icon: BarChart3, title: "Reporting & data analysis", description: "Scheduled and event-driven reports that reduce manual effort, with Oracle SQL analysis and reconciliation." },
-  { icon: Workflow, title: "Solution design & system integration", description: "Prototyping and end-to-end integration across internal teams, technology vendors and external partners." },
+  { title: "Online insurance portals", description: "Quotation, purchase, renewal and self-service journeys." },
+  { title: "Open Finance for insurance", description: "Data-sharing APIs, consent management and production certification." },
+  { title: "Partner & aggregator integrations", description: "Validated request and response flows with partners and comparison channels." },
+  { title: "Payment gateway integrations", description: "Secure online payments and gateway automation, including CyberSource." },
+  { title: "AI integrations", description: "Document intelligence and GPT-based capabilities in insurance journeys." },
+  { title: "UAE e-Invoicing enablement", description: "Invoice data capture, issuance workflows and compliance-ready processes." },
+  { title: "Reporting & data analysis", description: "Scheduled and event-driven reports that reduce manual effort." },
+  { title: "Solution design & prototyping", description: "End-to-end design and integration across teams, vendors and partners." },
 ];
 
 const steps = ["Understand the requirement", "Simplify the process", "Design & prototype", "Define the integration", "Test & secure", "Deliver & release", "Support & improve"];
 const coreSystems = [
-  { icon: Landmark, title: "Month-end & year-end closing", description: "Coordinate closing activities, system validations and new-period setup." },
-  { icon: BarChart3, title: "Reconciliation & reporting", description: "Use Oracle SQL for data analysis, reconciliation and automated reporting." },
-  { icon: Database, title: "System enhancements", description: "Manage system changes, upgrades and patches with vendors." },
-  { icon: Wrench, title: "Production support", description: "Coordinate L3/L4 support and resolve system and data-related issues." },
-  { icon: Rocket, title: "Testing & releases", description: "Manage testing, UAT and production deployments." },
+  { title: "Month-end & year-end closing", description: "Closing activities, system validations and new-period setup." },
+  { title: "Reconciliation & reporting", description: "Oracle SQL for data analysis, reconciliation and automated reporting." },
+  { title: "System enhancements", description: "Changes, upgrades and patches managed with vendors." },
+  { title: "Production support", description: "L3/L4 support coordination and resolution of system and data issues." },
+  { title: "Testing & releases", description: "Testing, UAT and production deployments." },
 ];
 const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Rocket, Wrench];
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
 function SectionHead({ title }: { title: string }) {
   return <div className="mb-8 self-start"><span aria-hidden="true" className="mb-4 block h-1 w-10 rounded-sm bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
+}
+
+function WorkPanel({ title, description, items }: { title: string; description: string; items: { title: string; description: string }[] }) {
+  return (
+    <article className="card-soft overflow-hidden rounded-xl">
+      <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-5 py-5 md:px-7">
+        <div className="min-w-0">
+          <h3 className="text-lg font-semibold leading-snug">{title}</h3>
+          <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted-foreground">{description}</p>
+        </div>
+        <span className="shrink-0 rounded-full bg-accent px-3 py-1 text-xs font-medium text-primary">{items.length} areas</span>
+      </div>
+      <ol className="divide-y divide-border">
+        {items.map((item, i) => (
+          <li key={item.title} className="grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-1 px-5 py-4 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline md:px-7">
+            <span aria-hidden="true" className="text-xs font-medium tabular-nums text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+            <h4 className="text-sm font-semibold leading-snug">{item.title}</h4>
+            <p className="col-start-2 text-sm leading-6 text-muted-foreground md:col-start-3">{item.description}</p>
+          </li>
+        ))}
+      </ol>
+    </article>
+  );
 }
 
 function Index() {
@@ -121,17 +144,9 @@ function Index() {
         </section>
 
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Selected work" />
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-            <div>
-              <div className="mb-5 flex items-center gap-3 border-b border-border pb-4"><span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-background text-primary"><MonitorSmartphone aria-hidden="true" className="size-4" /></span><h3 className="text-lg font-semibold leading-snug">Insurance digital ecosystem</h3></div>
-              <p className="mb-5 text-sm leading-6 text-muted-foreground">Designing, integrating and implementing digital services across General and Medical Insurance to meet CBUAE and UAE regulatory requirements and improve customer, intermediary and partner journeys.</p>
-              <div className="grid gap-3">{work.map(({ icon: Icon, title, description }) => <article key={title} className="card-soft flex items-start gap-3 border-l-2 border-l-primary/40 px-4 py-3"><span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-accent text-primary"><Icon aria-hidden="true" className="size-4" /></span><div className="min-w-0"><h4 className="text-sm font-semibold leading-snug">{title}</h4><p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p></div></article>)}</div>
-            </div>
-            <div>
-              <div className="mb-5 flex items-center gap-3 border-b border-border pb-4"><span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-background text-primary"><Database aria-hidden="true" className="size-4" /></span><h3 className="text-lg font-semibold leading-snug">Core Insurance Systems Management</h3></div>
-              <p className="mb-5 text-sm leading-6 text-muted-foreground">Managing IIRIS General Insurance, Medical and Finance systems to ensure smooth operations, system stability and timely month-end and year-end closing.</p>
-              <ul className="grid gap-3">{coreSystems.map(({ icon: Icon, title, description }) => <li key={title} className="card-soft flex items-start gap-3 px-4 py-3"><Icon aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" /><div className="min-w-0"><h4 className="text-sm font-semibold leading-snug">{title}</h4><p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p></div></li>)}</ul>
-            </div>
+          <div className="grid gap-6">
+            <WorkPanel title="Insurance digital ecosystem" description="Digital services across General and Medical Insurance, aligned with CBUAE and UAE regulatory requirements." items={work} />
+            <WorkPanel title="Core insurance systems management" description="IIRIS General Insurance, Medical and Finance systems run for stability and timely period closing." items={coreSystems} />
           </div>
         </div></section>
 
