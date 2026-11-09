@@ -73,7 +73,7 @@ const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Roc
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
 function SectionHead({ title }: { title: string }) {
-  return <div className="mb-12 self-start"><span aria-hidden="true" className="mb-5 block h-1 w-10 rounded-sm bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
+  return <div className="mb-8 self-start"><span aria-hidden="true" className="mb-4 block h-1 w-10 rounded-sm bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
 }
 
 function Index() {
@@ -91,7 +91,7 @@ function Index() {
 
       <main>
         <section id="top" className="border-b border-border">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-12 md:grid-cols-[1.4fr_1fr] md:gap-16 md:py-24 lg:px-8">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 py-10 md:grid-cols-[1.4fr_1fr] md:gap-12 md:py-16 lg:px-8">
             <div className="mx-auto aspect-square w-48 overflow-hidden rounded-full border border-border bg-muted shadow-soft md:order-2 md:w-full md:max-w-xs lg:max-w-sm"><img src={portrait} alt="Subhash Thaliyil in a navy suit" width={900} height={900} fetchPriority="high" className="h-full w-full object-cover" /></div>
             <div className="md:order-1">
               <p className="mb-5 flex items-center gap-2 text-xs font-medium text-muted-foreground"><MapPin className="size-3.5 text-primary" /> Dubai, UAE</p>
@@ -104,38 +104,38 @@ function Index() {
           </div>
         </section>
 
-        <section id="profile" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8">
+        <section id="profile" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8">
           <div className="grid gap-0"><SectionHead title="Professional profile" /><div>
             <p className="max-w-3xl text-lg leading-8 text-muted-foreground">I coordinate end-to-end technology delivery across digital insurance platforms, core systems, integrations and automation. Working with business, IT, compliance, vendors and external partners, I turn operational and regulatory requirements into practical solutions—from design and development to implementation and production readiness.</p>
-            <h3 className="mt-12 text-base font-semibold">Delivery experience</h3>
-            <ul className="mt-6 grid gap-x-16 gap-y-6 md:grid-cols-2">{responsibilities.map((point) => <li key={point} className="flex items-start gap-3 text-base leading-8 text-muted-foreground"><span className="mt-4 h-px w-3 shrink-0 bg-primary" /><span>{point}</span></li>)}</ul>
+            <h3 className="mt-8 text-base font-semibold">Delivery experience</h3>
+            <ul className="mt-5 grid gap-x-16 gap-y-4 md:grid-cols-2">{responsibilities.map((point) => <li key={point} className="flex items-start gap-3 text-base leading-8 text-muted-foreground"><span className="mt-4 h-px w-3 shrink-0 bg-primary" /><span>{point}</span></li>)}</ul>
           </div></div>
         </section>
 
-        <section id="expertise" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Areas of expertise" />
-          <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">{expertise.map(({ icon: Icon, title, description }) => <article key={title} className="flex items-start gap-5 border-t border-border pt-8"><span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-background text-primary"><Icon aria-hidden="true" className="size-5" /></span><div className="min-w-0"><h3 className="text-lg font-semibold leading-snug">{title}</h3><p className="mt-3 text-base leading-7 text-muted-foreground">{description}</p></div></article>)}</div>
+        <section id="expertise" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Areas of expertise" />
+          <div className="grid gap-x-16 gap-y-8 md:grid-cols-2">{expertise.map(({ icon: Icon, title, description }) => <article key={title} className="flex items-start gap-5 border-t border-border pt-6"><span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-background text-primary"><Icon aria-hidden="true" className="size-5" /></span><div className="min-w-0"><h3 className="text-lg font-semibold leading-snug">{title}</h3><p className="mt-3 text-base leading-7 text-muted-foreground">{description}</p></div></article>)}</div>
         </div></section>
 
-        <section id="skills" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Core skills" />
-          <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">{skills.map(({ icon: Icon, title, items }) => <div key={title} className="border-t border-border pt-7"><div className="flex items-center gap-3"><Icon aria-hidden="true" className="size-5 shrink-0 text-primary" /><h3 className="text-lg font-semibold">{title}</h3></div><ul className="mt-6 divide-y divide-border">{items.map(item => <li key={item} className="flex items-start gap-3 py-3 text-base leading-7 text-muted-foreground"><span aria-hidden="true" className="mt-3 size-1 shrink-0 rounded-full bg-primary/50" /><span>{item}</span></li>)}</ul></div>)}</div>
+        <section id="skills" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Core skills" />
+          <div className="grid gap-x-16 gap-y-8 md:grid-cols-2">{skills.map(({ icon: Icon, title, items }) => <div key={title} className="border-t border-border pt-5"><div className="flex items-center gap-3"><Icon aria-hidden="true" className="size-5 shrink-0 text-primary" /><h3 className="text-lg font-semibold">{title}</h3></div><ul className="mt-6 divide-y divide-border">{items.map(item => <li key={item} className="flex items-start gap-3 py-3 text-base leading-7 text-muted-foreground"><span aria-hidden="true" className="mt-3 size-1 shrink-0 rounded-full bg-primary/50" /><span>{item}</span></li>)}</ul></div>)}</div>
         </section>
 
-        <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Selected work" />
-          <div className="mb-8 max-w-3xl space-y-4"><h3 className="text-xl font-semibold leading-snug md:text-2xl">Insurance digital ecosystem</h3><p className="text-base leading-7 text-muted-foreground">Designing, integrating and implementing digital services across General and Medical Insurance to meet CBUAE and UAE regulatory requirements and improve customer, intermediary and partner journeys.</p></div>
+        <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Selected work" />
+          <div className="mb-6 max-w-3xl space-y-3"><h3 className="text-xl font-semibold leading-snug md:text-2xl">Insurance digital ecosystem</h3><p className="text-base leading-7 text-muted-foreground">Designing, integrating and implementing digital services across General and Medical Insurance to meet CBUAE and UAE regulatory requirements and improve customer, intermediary and partner journeys.</p></div>
           <div className="grid gap-3 md:grid-cols-2 md:gap-4">{work.map(({ icon: Icon, title, description }) => <article key={title} className="card-soft flex items-start gap-3 border-l-2 border-l-primary/40 px-4 py-3 md:gap-4 md:px-6 md:py-5"><span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-accent text-primary md:size-10"><Icon aria-hidden="true" className="size-4 md:size-4.5" /></span><div className="min-w-0"><h3 className="text-sm font-semibold leading-snug md:text-base">{title}</h3><p className="mt-1 text-sm leading-6 text-muted-foreground md:mt-1.5">{description}</p></div></article>)}</div>
-          <div className="mt-12 border-t border-border pt-10 md:mt-14 md:pt-12">
+          <div className="mt-10 border-t border-border pt-8 md:mt-12 md:pt-10">
             <div className="max-w-3xl"><div className="mb-5 flex size-11 items-center justify-center rounded-md bg-background text-primary"><Database aria-hidden="true" className="size-5" /></div><h3 className="text-xl font-semibold leading-snug md:text-2xl">Core Insurance Systems Management</h3><p className="mt-5 text-base leading-8 text-muted-foreground">Managing IIRIS General Insurance, Medical and Finance systems to ensure smooth operations, system stability and timely month-end and year-end closing.</p></div>
             <h4 className="mt-10 text-base font-semibold">Key responsibilities</h4>
             <ul className="mt-5 grid gap-x-16 gap-y-6 md:grid-cols-2">{coreSystems.map(({ icon: Icon, title, description }) => <li key={title} className="flex items-start gap-4 border-t border-border pt-5"><Icon aria-hidden="true" className="mt-1 size-5 shrink-0 text-primary" /><div className="min-w-0"><h5 className="text-base font-semibold leading-7">{title}</h5><p className="mt-1.5 text-sm leading-6 text-muted-foreground">{description}</p></div></li>)}</ul>
           </div>
         </div></section>
 
-        <section id="approach" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
+        <section id="approach" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-6 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
           const Icon = stepIcons[i] ?? Workflow;
-          return <li key={step} className="flex items-center gap-5 border-t border-border pt-6"><span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-primary"><Icon aria-hidden="true" className="size-5" /></span><p className="flex-1 text-base font-medium leading-relaxed">{step}</p>{i < steps.length - 1 && <ArrowRight aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />}</li>;
+          return <li key={step} className="flex items-center gap-4 border-t border-border pt-5"><span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-primary"><Icon aria-hidden="true" className="size-5" /></span><p className="flex-1 text-base font-medium leading-relaxed">{step}</p>{i < steps.length - 1 && <ArrowRight aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />}</li>;
         })}</ol></section>
 
-        <section id="contact" className="border-t border-border bg-muted"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-24 lg:px-8"><div><SectionHead title="Contact" /><p className="text-base text-muted-foreground">Subhash Thaliyil · Dubai, UAE</p></div><div className="min-w-0"><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 text-left hover:bg-accent hover:text-accent-foreground"><a href={`mailto:${EMAIL}`}><Mail className="text-primary" /><span className="min-w-0 flex-1"><span className="block text-xs text-muted-foreground">Email</span><span className="mt-1 block whitespace-normal break-all">{EMAIL}</span></span><ArrowUpRight /></a></Button><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 hover:bg-accent hover:text-accent-foreground"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin className="text-primary" /><span className="flex-1 text-left"><span className="block text-xs text-muted-foreground">LinkedIn</span><span className="mt-1 block">Subhash Thaliyil</span></span><ArrowUpRight /></a></Button></div></div></section>
+        <section id="contact" className="border-t border-border bg-muted"><div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2 md:gap-12 md:py-20 lg:px-8"><div><SectionHead title="Contact" /><p className="text-base text-muted-foreground">Subhash Thaliyil · Dubai, UAE</p></div><div className="min-w-0"><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 text-left hover:bg-accent hover:text-accent-foreground"><a href={`mailto:${EMAIL}`}><Mail className="text-primary" /><span className="min-w-0 flex-1"><span className="block text-xs text-muted-foreground">Email</span><span className="mt-1 block whitespace-normal break-all">{EMAIL}</span></span><ArrowUpRight /></a></Button><Button asChild variant="ghost" className="h-auto w-full justify-start gap-4 rounded-none border-b border-border px-0 py-6 hover:bg-accent hover:text-accent-foreground"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin className="text-primary" /><span className="flex-1 text-left"><span className="block text-xs text-muted-foreground">LinkedIn</span><span className="mt-1 block">Subhash Thaliyil</span></span><ArrowUpRight /></a></Button></div></div></section>
       </main>
       <footer className="border-t border-border"><div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-6 text-xs text-muted-foreground lg:px-8"><span>© 2026 Subhash Thaliyil</span><Button asChild variant="ghost" size="sm"><a href="#top">Back to top <ArrowUpRight className="size-3" /></a></Button></div></footer>
     </div>
