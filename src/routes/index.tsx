@@ -80,9 +80,13 @@ function SectionHead({ title }: { title: string }) {
   return <div className="mb-8 self-start"><span aria-hidden="true" className="mb-4 block h-1 w-10 rounded-sm bg-primary" /><h2 className="text-2xl font-semibold leading-snug md:text-3xl">{title}</h2></div>;
 }
 
-function WorkPanel({ description, items }: { description: string; items: { title: string; description: string }[] }) {
+function WorkPanel({ title, description, items }: { title: string; description: string; items: { title: string; description: string }[] }) {
   return (
     <div>
+      <div className="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <h3 className="text-lg font-semibold leading-snug">{title}</h3>
+        <span className="text-xs font-medium text-muted-foreground">{items.length} areas</span>
+      </div>
       <p className="mb-2 max-w-2xl text-sm leading-6 text-muted-foreground">{description}</p>
       <ol className="divide-y divide-border border-t border-border">
         {items.map((item, i) => (
@@ -99,7 +103,6 @@ function WorkPanel({ description, items }: { description: string; items: { title
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [workTab, setWorkTab] = useState(0);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
@@ -143,15 +146,9 @@ function Index() {
         </section>
 
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Selected work" />
-          <div role="tablist" aria-label="Selected work areas" className="mb-8 flex flex-wrap gap-x-8 gap-y-2 border-b border-border">
-            {workGroups.map((group, i) => (
-              <button key={group.id} type="button" role="tab" aria-selected={workTab === i} onClick={() => setWorkTab(i)} className={`-mb-px flex items-baseline gap-2 border-b-2 pb-3 text-left transition-colors ${workTab === i ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}>
-                <span className="text-base font-semibold leading-snug">{group.label}</span>
-                <span className="text-xs font-medium text-muted-foreground">{group.items.length} areas</span>
-              </button>
-            ))}
+          <div className="grid gap-12">
+            {workGroups.map((group) => <WorkPanel key={group.id} title={group.label} description={group.description} items={group.items} />)}
           </div>
-          <WorkPanel description={(workGroups[workTab] ?? workGroups[0])!.description} items={(workGroups[workTab] ?? workGroups[0])!.items} />
         </div></section>
 
         <section id="approach" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-6 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
