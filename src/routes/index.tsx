@@ -51,23 +51,23 @@ const skills = [
 ];
 
 const work = [
-  { icon: MonitorSmartphone, title: "Online insurance portals", description: "Easy-buy quotation, purchase, renewal and self-service journeys for customers and intermediaries." },
-  { icon: Landmark, title: "Open Finance for insurance", description: "Data-sharing APIs, consent management, near-real-time quotations and production certification." },
-  { icon: Network, title: "Partner & aggregator integrations", description: "Connectivity with partners, aggregators and comparison channels, with validated request and response flows." },
-  { icon: CreditCard, title: "Payment gateway integrations", description: "Secure online payments and gateway automation, including CyberSource services." },
-  { icon: Sparkles, title: "AI integrations in insurance", description: "Document intelligence and GPT-based capabilities embedded into insurance journeys and operations." },
-  { icon: ReceiptText, title: "UAE e-Invoicing enablement", description: "Invoice data capture, issuance workflows and compliance-ready digital processes." },
-  { icon: BarChart3, title: "Reporting & data analysis", description: "Scheduled and event-driven reports that reduce manual effort, with Oracle SQL analysis and reconciliation." },
-  { icon: Workflow, title: "Solution design & system integration", description: "Prototyping and end-to-end integration across internal teams, technology vendors and external partners." },
+  { title: "Online insurance portals", description: "Quotation, purchase, renewal and self-service journeys." },
+  { title: "Open Finance for insurance", description: "Data-sharing APIs, consent management and production certification." },
+  { title: "Partner & aggregator integrations", description: "Validated request and response flows with partners and comparison channels." },
+  { title: "Payment gateway integrations", description: "Secure online payments and gateway automation, including CyberSource." },
+  { title: "AI integrations", description: "Document intelligence and GPT-based capabilities in insurance journeys." },
+  { title: "UAE e-Invoicing enablement", description: "Invoice data capture, issuance workflows and compliance-ready processes." },
+  { title: "Reporting & data analysis", description: "Scheduled and event-driven reports that reduce manual effort." },
+  { title: "Solution design & prototyping", description: "End-to-end design and integration across teams, vendors and partners." },
 ];
 
 const steps = ["Understand the requirement", "Simplify the process", "Design & prototype", "Define the integration", "Test & secure", "Deliver & release", "Support & improve"];
 const coreSystems = [
-  { icon: Landmark, title: "Month-end & year-end closing", description: "Coordinate closing activities, system validations and new-period setup." },
-  { icon: BarChart3, title: "Reconciliation & reporting", description: "Use Oracle SQL for data analysis, reconciliation and automated reporting." },
-  { icon: Database, title: "System enhancements", description: "Manage system changes, upgrades and patches with vendors." },
-  { icon: Wrench, title: "Production support", description: "Coordinate L3/L4 support and resolve system and data-related issues." },
-  { icon: Rocket, title: "Testing & releases", description: "Manage testing, UAT and production deployments." },
+  { title: "Month-end & year-end closing", description: "Closing activities, system validations and new-period setup." },
+  { title: "Reconciliation & reporting", description: "Oracle SQL for data analysis, reconciliation and automated reporting." },
+  { title: "System enhancements", description: "Changes, upgrades and patches managed with vendors." },
+  { title: "Production support", description: "L3/L4 support coordination and resolution of system and data issues." },
+  { title: "Testing & releases", description: "Testing, UAT and production deployments." },
 ];
 const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Rocket, Wrench];
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
