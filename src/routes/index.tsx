@@ -82,11 +82,11 @@ function SectionHead({ title }: { title: string }) {
 
 function WorkPanel({ description, items }: { description: string; items: { title: string; description: string }[] }) {
   return (
-    <div className="card-soft overflow-hidden rounded-xl">
-      <p className="border-b border-border px-5 py-4 text-sm leading-6 text-muted-foreground md:px-7">{description}</p>
-      <ol className="divide-y divide-border">
+    <div>
+      <p className="mb-2 max-w-2xl text-sm leading-6 text-muted-foreground">{description}</p>
+      <ol className="divide-y divide-border border-t border-border">
         {items.map((item, i) => (
-          <li key={item.title} className="grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-1 px-5 py-4 transition-colors hover:bg-accent/40 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline md:px-7">
+          <li key={item.title} className="grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-1 py-4 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline">
             <span aria-hidden="true" className="text-xs font-medium tabular-nums text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
             <h4 className="text-sm font-semibold leading-snug">{item.title}</h4>
             <p className="col-start-2 text-sm leading-6 text-muted-foreground md:col-start-3">{item.description}</p>
@@ -143,11 +143,11 @@ function Index() {
         </section>
 
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Selected work" />
-          <div role="tablist" aria-label="Selected work areas" className="mb-6 grid gap-3 sm:grid-cols-2">
+          <div role="tablist" aria-label="Selected work areas" className="mb-8 flex flex-wrap gap-x-8 gap-y-2 border-b border-border">
             {workGroups.map((group, i) => (
-              <button key={group.id} type="button" role="tab" aria-selected={workTab === i} onClick={() => setWorkTab(i)} className={`flex items-center justify-between gap-3 rounded-xl border px-5 py-4 text-left transition-colors ${workTab === i ? "border-primary bg-primary text-primary-foreground shadow-soft" : "border-border bg-background hover:border-primary/40"}`}>
-                <span className="text-sm font-semibold leading-snug">{group.label}</span>
-                <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${workTab === i ? "bg-primary-foreground/15 text-primary-foreground" : "bg-accent text-primary"}`}>{group.items.length} areas</span>
+              <button key={group.id} type="button" role="tab" aria-selected={workTab === i} onClick={() => setWorkTab(i)} className={`-mb-px flex items-baseline gap-2 border-b-2 pb-3 text-left transition-colors ${workTab === i ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}>
+                <span className="text-base font-semibold leading-snug">{group.label}</span>
+                <span className="text-xs font-medium text-muted-foreground">{group.items.length} areas</span>
               </button>
             ))}
           </div>
