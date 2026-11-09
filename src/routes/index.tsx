@@ -100,6 +100,7 @@ function WorkPanel({ description, items }: { description: string; items: { title
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [workTab, setWorkTab] = useState(0);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
@@ -143,10 +144,15 @@ function Index() {
         </section>
 
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Selected work" />
-          <div className="grid gap-6">
-            <WorkPanel title="Insurance digital ecosystem" description="Digital services across General and Medical Insurance, aligned with CBUAE and UAE regulatory requirements." items={work} />
-            <WorkPanel title="Core insurance systems management" description="IIRIS General Insurance, Medical and Finance systems run for stability and timely period closing." items={coreSystems} />
+          <div role="tablist" aria-label="Selected work areas" className="mb-6 grid gap-3 sm:grid-cols-2">
+            {workGroups.map((group, i) => (
+              <button key={group.id} type="button" role="tab" aria-selected={workTab === i} onClick={() => setWorkTab(i)} className={`flex items-center justify-between gap-3 rounded-xl border px-5 py-4 text-left transition-colors ${workTab === i ? "border-primary bg-primary text-primary-foreground shadow-soft" : "border-border bg-background hover:border-primary/40"}`}>
+                <span className="text-sm font-semibold leading-snug">{group.label}</span>
+                <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${workTab === i ? "bg-primary-foreground/15 text-primary-foreground" : "bg-accent text-primary"}`}>{group.items.length} areas</span>
+              </button>
+            ))}
           </div>
+          <WorkPanel description={workGroups[workTab].description} items={workGroups[workTab].items} />
         </div></section>
 
         <section id="approach" className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-6 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
