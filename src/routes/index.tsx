@@ -36,7 +36,7 @@ const responsibilities = [
 
 const expertise = [
   { icon: MonitorSmartphone, title: "Digital insurance platforms", description: "Customer and intermediary journeys, portal design and partner quotation workflows." },
-  { icon: Database, title: "Core insurance systems", description: "IIRIS General Insurance, Medical, Finance and Broker systems: implementation, enhancements and upgrades." },
+  { icon: Database, title: "Core insurance systems management", description: "IIRIS General Insurance, Medical and Finance systems: stable operations, enhancements and financial closing." },
   { icon: Landmark, title: "Regulatory technology", description: "CBUAE Open Finance, consent management, AML compliance and UAE e-Invoicing." },
   { icon: Network, title: "APIs & payment services", description: "Partner connectivity, data mapping, request and response validation, and payment gateway management." },
   { icon: ScanText, title: "AI-enabled automation", description: "Intelligent document processing, data extraction, form pre-fill, validation and workflow automation." },
@@ -62,6 +62,13 @@ const work = [
 ];
 
 const steps = ["Understand the requirement", "Simplify the process", "Design & prototype", "Define the integration", "Test & secure", "Deliver & release", "Support & improve"];
+const coreSystems = [
+  { icon: Landmark, title: "Month-end & year-end closing", description: "Coordinate closing activities, system validations and new-period setup." },
+  { icon: BarChart3, title: "Reconciliation & reporting", description: "Use Oracle SQL for data analysis, reconciliation and automated reporting." },
+  { icon: Database, title: "System enhancements", description: "Manage system changes, upgrades and patches with vendors." },
+  { icon: Wrench, title: "Production support", description: "Coordinate L3/L4 support and resolve system and data-related issues." },
+  { icon: Rocket, title: "Testing & releases", description: "Manage testing, UAT and production deployments." },
+];
 const stepIcons = [Search, SlidersHorizontal, PenTool, Network, ShieldCheck, Rocket, Wrench];
 const nav = [["Profile", "profile"], ["Expertise", "expertise"], ["Skills", "skills"], ["Selected work", "work"], ["Contact", "contact"]];
 
@@ -75,7 +82,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6 lg:px-8">
-          <Button asChild variant="ghost" className="gap-3 px-0 hover:bg-transparent"><a href="#top" aria-label="Subhash Thaliyil — back to top"><span className="flex size-9 items-center justify-center rounded-md bg-primary font-display text-sm text-primary-foreground">ST</span><span className="text-sm font-semibold">Subhash Thaliyil</span></a></Button>
+          <Button asChild variant="ghost" className="gap-3 px-0 hover:bg-transparent"><a href="#top" aria-label="Subhash Thaliyil — back to top"><span aria-hidden="true" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary font-display text-sm font-semibold text-primary-foreground shadow-soft ring-2 ring-background">ST</span><span className="text-sm font-semibold">Subhash Thaliyil</span></a></Button>
           <nav aria-label="Main navigation" className="hidden items-center gap-2 lg:flex">{nav.map(([label, id]) => <Button asChild variant="ghost" size="sm" key={id}><a href={`#${id}`}>{label}</a></Button>)}</nav>
           <Button variant="ghost" size="icon" className="lg:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</Button>
         </div>
@@ -116,6 +123,11 @@ function Index() {
         <section id="work" className="border-y border-border bg-muted"><div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Selected work" />
           <div className="mb-12 max-w-3xl space-y-5"><h3 className="text-xl font-semibold leading-snug md:text-2xl">Insurance digital ecosystem</h3><p className="text-base leading-8 text-muted-foreground">Designing, integrating and implementing digital services across General and Medical Insurance to meet CBUAE and UAE regulatory requirements and improve customer, intermediary and partner journeys.</p></div>
           <div className="grid gap-6 md:grid-cols-2">{work.map(({ icon: Icon, title, description }) => <article key={title} className="card-soft flex gap-4 border-t-2 border-t-primary/30 p-7 md:gap-5 md:p-8"><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold leading-snug">{title}</h3><Icon className="mt-0.5 size-4 shrink-0 text-primary" /></div><p className="mt-4 text-base leading-7 text-muted-foreground">{description}</p></div></article>)}</div>
+          <div className="mt-16 border-t border-border pt-12 md:mt-20 md:pt-16">
+            <div className="max-w-3xl"><div className="mb-5 flex size-11 items-center justify-center rounded-md bg-background text-primary"><Database aria-hidden="true" className="size-5" /></div><h3 className="text-xl font-semibold leading-snug md:text-2xl">Core Insurance Systems Management</h3><p className="mt-5 text-base leading-8 text-muted-foreground">Managing IIRIS General Insurance, Medical and Finance systems to ensure smooth operations, system stability and timely month-end and year-end closing.</p></div>
+            <h4 className="mt-10 text-base font-semibold">Key responsibilities</h4>
+            <ul className="mt-6 grid gap-x-16 gap-y-8 md:grid-cols-2">{coreSystems.map(({ icon: Icon, title, description }) => <li key={title} className="flex items-start gap-4 border-t border-border pt-6"><Icon aria-hidden="true" className="mt-1 size-5 shrink-0 text-primary" /><div className="min-w-0"><h5 className="text-base font-semibold leading-7">{title}</h5><p className="mt-2 text-base leading-7 text-muted-foreground">{description}</p></div></li>)}</ul>
+          </div>
         </div></section>
 
         <section id="approach" className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-8"><SectionHead title="Working approach" /><ol className="grid gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">{steps.map((step, i) => {
